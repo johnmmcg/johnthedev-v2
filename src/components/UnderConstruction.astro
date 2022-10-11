@@ -1,4 +1,18 @@
 ---
+const links = [
+	{
+		label: "LinkedIn",
+		url: "https://www.linkedin.com/in/johnmmcg/"
+	},
+	{
+		label: "GitHub",
+		url: "https://github.com/johnmmcg"
+	},
+	{
+		label: "Instagram",
+		url: "https://www.instagram.com/light_roast.heavy_lifts/"
+	}
+];
 ---
 
 <section class="h-full flex flex-col justify-center items-center m-auto">
@@ -20,28 +34,16 @@
 			In the meantime, feel free to checkout these links to see what else I'm up to:
 		</h2>
 		<ul class="w-full flex flex-row justify-evenly">
-			<li>
-				<a 
+			{links.map(link => (
+				<li>
+					<a 
 					class="text-indigo-500 hover:underline hover:text-indigo-300"
-					href="https://www.linkedin.com/in/johnmmcg/" target="_blank"
-				>
-					LinkedIn
-				</a>
-			</li>
-			<li>
-				<a 
-					class="text-indigo-500 hover:underline hover:text-indigo-300"
-					href="https://github.com/johnmmcg" target="_blank">
-					GitHub
-				</a>
-			</li>
-			<li>
-				<a 
-					class="text-indigo-500 hover:underline hover:text-indigo-300"
-					href="https://www.instagram.com/light_roast.heavy_lifts/" target="_blank">
-					Instagram
-				</a>
-			</li>
+					href={link.url} target="_blank"
+					>
+						{link.label}
+					</a>
+				</li>
+			))}
 		</ul>
 	</main>
 </section>
