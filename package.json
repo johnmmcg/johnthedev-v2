@@ -1,7 +1,8 @@
 {
-  "name": "@example/basics",
-  "version": "0.0.1",
-  "private": true,
+  "name": "johnthedev-v2",
+  "version": "2.0.0",
+  "private": false,
+  "author": "John McGuinness <john.maurer.mcguinnes@gmail.com> (johnthedev.com)",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -10,9 +11,11 @@
   },
   "devDependencies": {
     "astro": "^1.0.0",
-    "prettier-plugin-astro": "^0.5.0"
+    "prettier-plugin-astro": "^0.5.0",
+    "tailwindcss": "^3.1.8"
   },
   "dependencies": {
+    "@astrojs/tailwind": "^2.0.2",
     "cypress": "^10.0.3"
   }
 }
