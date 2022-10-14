@@ -9,7 +9,11 @@ module.exports = {
     fontFamily: {
       'sans': ["'Nunito'", ...defaultTheme.fontFamily.sans],
     },
-    extend: {},
+    extend: {
+      scale: {
+        flip: '-1'
+      }
+    },
   },
   plugins: [],
 }

@@ -1,0 +1,125 @@
+---
+import Thing from '../components/Thing.jsx';
+import codeSvg from '../svg/code.svg';
+import barbellSvg from '../svg/barbells.svg';
+import coffeeSvg from '../svg/coffeeBeans.svg';
+import d20Svg from '../svg/d20.svg';
+import travelSvg from '../svg/travel.svg';
+
+const things = [
+    {
+        id: "coding",
+        icon: codeSvg,
+        color: "#636e72",
+        url: "https://github.com/johnmmcg"
+    },
+    {
+        id: "lifting",
+        icon: barbellSvg,
+        color: "#6c5ce7",
+        url: "https://www.instagram.com/light_roast.heavy_lifts/"
+    },
+    {
+        id: "coffee",
+        icon: coffeeSvg,
+        color: "#d63031",
+        url: "https://www.instagram.com/light_roast.heavy_lifts/"
+    },
+    {
+        id: "dnd",
+        icon: d20Svg,
+        color: "#00b894"
+    },
+    {
+        id: "travel",
+        icon: travelSvg,
+        color: "#a29bfe"
+    }
+]
+
+---
+
+<div id="ringContainer" class="w-[200px] h-[200px] md:w-[650px] md:h-[650px] rounded-full absolute inset-1/2 translate-x-[-50%] translate-y-[-50%]">
+    {
+        things.map(data => (
+            <div class="thingContainer">
+            <Thing client:load data={data} />
+            </div>
+
+        ))
+    }
+</div>
+
+<style>
+
+    #ringContainer {
+        transform: rotate(0deg);
+        animation-name: around;
+        animation-duration: 3s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-out;
+        animation-play-state: running;
+        translate: -50% -50%;
+        transition: .25s ease-in-out;
+    }
+
+    @keyframes around {
+        from {
+            transform: rotate(0deg);
+            opacity: 0;
+        }
+        to {
+            transform: rotate(360deg);
+            opacity: 1;
+        }
+    }
+
+    #ringContainer > .thingContainer { 
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        border-radius: 50%;
+        left: 50%;
+        top: 50%;
+        translate: -50% -50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .25s linear;
+    }
+
+    #ringContainer > .thingContainer:nth-child(1) {
+        transform: rotate(0deg) translate(100px);
+    }
+    #ringContainer > .thingContainer:nth-child(2) {
+        transform: rotate(72deg) translate(100px);
+    }
+    #ringContainer > .thingContainer:nth-child(3) {
+        transform: rotate(144deg) translate(100px);
+    }
+    #ringContainer > .thingContainer:nth-child(4) {
+        transform: rotate(216deg) translate(100px);
+    }
+    #ringContainer > .thingContainer:nth-child(5) {
+        transform: rotate(288deg) translate(100px);
+    }
+
+    @media (min-width: 768px) {
+        #ringContainer > .thingContainer:nth-child(1) {
+        transform: rotate(0deg) translate(150px);
+        }
+        #ringContainer > .thingContainer:nth-child(2) {
+            transform: rotate(72deg) translate(150px);
+        }
+        #ringContainer > .thingContainer:nth-child(3) {
+            transform: rotate(144deg) translate(150px);
+        }
+        #ringContainer > .thingContainer:nth-child(4) {
+            transform: rotate(216deg) translate(150px);
+        }
+        #ringContainer > .thingContainer:nth-child(5) {
+            transform: rotate(288deg) translate(150px);
+        }
+    }
+</style>
+
