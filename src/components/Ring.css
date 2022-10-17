@@ -1,0 +1,32 @@
+#ringContainer {
+    position: relative;
+    border-radius: 100%;
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    transform: rotate(0deg);
+    transition: all .2s ease-in-out;
+}
+
+@media (min-width: 768px) {
+    #ringContainer {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+.animate-spin {
+    animation-name: rotate;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-duration: 1s;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

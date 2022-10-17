@@ -2,7 +2,7 @@
 
 ---
 
-<div id="avatarContainer" class="bg-gray-100 dark:bg-slate-700 shadow-lg dark:border-slate-400 dark:border rounded-full w-40 h-40 md:w-52 md:h-52 overflow-hidden absolute inset-1/2 translate-x-[-50%] translate-y-[-50%] transition-all duration-100 hover:scale-110 hover:cursor-none">
+<div id="avatarContainer" class="bg-gray-100 dark:bg-slate-700 shadow-lg dark:border-slate-400 dark:border rounded-full w-40 h-40 md:w-48 md:h-48 overflow-hidden absolute inset-1/2 translate-x-[-50%] translate-y-[-50%] transition-all duration-100 hover:scale-110 hover:cursor-none z-10">
     <svg id="avatar" viewBox="0 0 275 295" xmlns="http://www.w3.org/2000/svg" data-title="Avataaar by Pablo Stanley">
         <g id="Avataaar" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g transform="translate(-825.000000, -1100.000000)" id="Avataaar/Circle">
@@ -128,7 +128,6 @@
     const ringContainer = document.querySelector('#ringContainer');    
     
     function onRingContainerHover(evt) {
-        console.log(evt.target.nodeName);
         if (evt.target.nodeName === 'IMG') {
             if (evt.type === "mouseover") {
                 eyesOpen.classList.add('hidden');
@@ -141,6 +140,20 @@
         }
     }
     ringContainer.onmouseover = ringContainer.onmouseout = onRingContainerHover;
+
+    const avatarContainer = document.querySelector('#avatarContainer');    
+    
+    function onAvatarContainerHover(evt) {  
+
+        if (evt.type === "mouseover") { 
+            ringContainer.classList.add('animate-spin');
+        }
+        if (evt.type === "mouseout") {
+            ringContainer.classList.remove('animate-spin');
+        }
+    }
+    
+    avatarContainer.onmouseover = avatarContainer.onmouseout = onAvatarContainerHover;
 </script>
 
 <style>

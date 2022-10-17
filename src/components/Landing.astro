@@ -1,13 +1,13 @@
 ---
 import TextBlock from './TextBlock.astro';
 import Avatar from "./Avatar.astro";
-import Ring from "./Ring.astro";
+import Ring from "./Ring.jsx";
 
 ---
 
 <div class="h-screen w-full relative overflow-hidden bg-slate-800 flex flex-col">
     <div class="flex flex-1 relative">
-        <Ring />
+        <Ring client:load />
         <Avatar />
     </div>
     <div class="h-auto relative">
