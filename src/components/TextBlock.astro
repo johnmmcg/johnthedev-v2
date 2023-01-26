@@ -1,4 +1,6 @@
 ---
+import ReferenceCarousel from './ReferenceCarousel.jsx';
+
 const links = [
 	{
 		label: "LinkedIn",
@@ -15,34 +17,28 @@ const links = [
 ];
 ---
 
-<section class="flex flex-col justify-center items-center m-auto md:mb-8">
-	<main class="bg-gray-100 dark:bg-slate-700 dark:text-slate-200 shadow-lg shadow-slate-900/50 dark:shadow-slate-700/50 border rounded-xl border-slate-200 flex flex-col justify-center items-center text-center p-2 md:p-6  m-2 md:m-4">
-		<h1 class="text-xl md:text-2xl font-bold mb-4">
+<section class="flex flex-col justify-center items-center m-auto md:mb-8 max-w-4xl">
+	<main class="bg-gray-100 dark:bg-slate-700 dark:text-slate-200 shadow-lg shadow-slate-900/50 dark:shadow-slate-700/50 border rounded-xl border-slate-200 flex flex-col justify-center items-center text-center p-2 m-2 md:m-4 w-full">
+		<h1 class="text-xl font-bold mb-2">
 			Hi 👋🏼 
 			<br class="md:hidden"> 
-			I'm John McGuinness.
+			I'm John McGuinness ☕️
 		</h1>
 		<h2 class="mb-4 text-sm md:text-base">
 			I'm a Web Engineer based in Philadelphia 💙 
 			<br>
-			Currently, I'm building awesome stuff at <a class="text-indigo-500 hover:underline hover:text-indigo-300" href="https://open.spotify.com/" target="_blank">Spotify</a> 🎶
+			I specialize in building User Interfaces 💻
 			<br>
+			I've worked with some talented folks who have 
+			<a
+				class="text-indigo-500 hover:underline hover:text-indigo-400 transition duration-100"
+				href="https://www.linkedin.com/in/johnmmcg/details/recommendations/?detailScreenTabIndex=0" 
+				target="_blank"
+			>
+				great things to say about me!
+			</a>
 			<br>
-			I love coding, coffee, powerlifting, D&amp;D, and travel!
-			<br>
-			Check out these links to see what I'm up to:
 		</h2>
-		<ul class="w-full flex flex-row justify-evenly">
-			{links.map(link => (
-				<li>
-					<a 
-					class="text-indigo-500 hover:underline hover:text-indigo-300"
-					href={link.url} target="_blank"
-					>
-						{link.label}
-					</a>
-				</li>
-			))}
-		</ul>
+		<ReferenceCarousel client:load />
 	</main>
 </section>

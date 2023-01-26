@@ -1,14 +1,16 @@
-
+:root {
+    --thing-size: 80px;
+}
 
 .thing {
-    width: 100px;
-    height: 100px;
+    display: flex;
+    width: var(--thing-size);
+    height: var(--thing-size);
     border-radius: 100%;
-    overflow: hidden;
     position: absolute;
     top: 50%;
     left: 50%;
-    margin: calc(-100px / 2);
+    margin: calc(-1 * var(--thing-size) / 2);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,11 +21,39 @@
 
 .thing:hover {
     scale: 1.1;
-    box-shadow: 0px 0px 20px rgb(255,255,255,.5);
+    box-shadow: 0px 0px 10px rgb(255,255,255,.8);
 }
 
 .thing > img {
     width: 100%;
     height: auto;
     transition: all .25s ease-in-out;
+}
+
+.thing > h3 {
+    position: absolute;
+    opacity: 0;
+    scale: .25;
+    translate: 0px calc(var(--thing-size)/2);
+    transition: .2s ease;
+}
+
+.thing:hover > h3 {
+    opacity: 1;
+    scale: 1;
+    translate: 0px calc(var(--thing-size)/2 + 8px);
+    transition: .2s ease;
+}
+
+@media (min-width: 768px) {
+    :root {
+        --thing-size: 90px;
+    }
+
+    .thing:hover > h3 {
+        opacity: 1;
+        scale: 1;
+        translate: 0px calc(var(--thing-size)/2 + 14px);
+        transition: .2s ease;
+    }
 }
