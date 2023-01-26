@@ -18,7 +18,7 @@
 .animate-spin {
     animation-name: rotate;
     animation-iteration-count: 1;
-    animation-timing-function: ease-out;
+    animation-timing-function: cubic-bezier(0.455, 0.03, 0.2, 1);
     animation-duration: 1s;
 }
 

@@ -13,13 +13,13 @@ export function useDebounce(fn, delay) {
     };
   }
 
-  const SMALL_SCREEN_THRESHOLD = 820;
+export const SMALL_SCREEN_THRESHOLD = 820;
   
-export function useWindowSize() {
+export function useWindowSize(debounceMs = 250) {
     const [size, setSize] = useState([0, 0]);
     const debouncedHandleResize = useDebounce(() => {
       setSize([window.innerWidth, window.innerHeight]);
-    }, 250);
+    }, debounceMs);
   
     useEffect(() => {
       window.addEventListener('resize', debouncedHandleResize);

@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.fade-in {
+    animation: fade-in 1s ease-in-out;
+}
+
+.slide-up {
+    animation: slide-up 1s ease-in-out;
+}
+
+.enter-from-bottom {
+    animation: fade-in 1s, slide-up 1s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; } to { opacity: 1; }
+}
+
+@keyframes slide-up {
+    from { translate: 0px 100px; } to { translate: 0px 0px };
+}

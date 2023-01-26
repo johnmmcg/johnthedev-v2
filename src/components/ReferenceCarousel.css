@@ -1,0 +1,40 @@
+
+
+#listRow {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+    left: 50%;
+    translate: -50%;
+    z-index: 0;
+    transition: .2s linear;
+}
+
+.slidePrevious {
+    animation: 1000ms slidePrevious cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.slideNext {
+    animation: 1000ms slideNext cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+@keyframes slidePrevious {
+    from { translate: -50%; }
+    to { translate: -30%; }    
+}
+
+
+@keyframes slideNext {
+    from { translate: -50%; }
+    to { translate: -70%; }    
+}
+
+@media screen and (max-width: 640px) {
+    #listRowContainer::before,
+    #listRowContainer::after {
+        width: 10px;
+    }
+}
