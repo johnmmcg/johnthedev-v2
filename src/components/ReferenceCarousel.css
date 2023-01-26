@@ -1,4 +1,23 @@
-
+#listRowContainer::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 16px;
+    z-index: 10;
+    background: linear-gradient(to right, rgba(243, 244, 246, 1), rgba(243, 244, 246, 0));
+}
+#listRowContainer::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 16px;
+    z-index: 10;
+    background: linear-gradient(to left, rgba(243, 244, 246, 1), rgba(243, 244, 246, 0));
+}
 
 #listRow {
     position: absolute;
@@ -35,6 +54,6 @@
 @media screen and (max-width: 640px) {
     #listRowContainer::before,
     #listRowContainer::after {
-        width: 10px;
+        width: 6px;
     }
 }
