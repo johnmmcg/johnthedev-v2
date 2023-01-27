@@ -1,3 +1,7 @@
+#listRowContainer {
+    background: transparent;
+}
+
 #listRowContainer::before {
     content: '';
     position: absolute;
@@ -20,6 +24,7 @@
 }
 
 #listRow {
+    background: transparent;
     position: absolute;
     display: flex;
     flex-direction: row;
