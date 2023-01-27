@@ -4,13 +4,13 @@ import "./ReferenceCarousel.css";
 
 const REFS = [
   {
-    name: "Brian Isely",
+    name: "Rob Sliwa",
     image_url:
-      "https://media.licdn.com/dms/image/C4E03AQFIZOJbydZZug/profile-displayphoto-shrink_100_100/0/1614623125118?e=1680134400&v=beta&t=f7dt4mg6MK55290jXv3o-0vXOzf39jdLILAdrC9pEMU",
-    role: "Executive VP",
-    company: "Center City Film & Video",
-    text: "[John] is always on time, focused, courteous, extremely intelligent, humble and hard working. I give John my highest recommendation and am certain he will be an asset to any organization that is lucky enough to employ him.",
-    url: "https://www.linkedin.com/in/brianisely/",
+      "https://media.licdn.com/dms/image/C5103AQH5XHsE_xT0Pg/profile-displayphoto-shrink_100_100/0/1516349636068?e=1680134400&v=beta&t=-lDFPKR5rLtYIXYq1RlfvsvYT3P_YNBCxk3NM3G-5DI",
+    role: "Senior Systems Engineer",
+    company: "Somos & Comcast",
+    text: "John is one of the most creative front-end developers I ever worked with. When faced with the need to learn new technologies, he never hesitated and was very quick in getting himself up to speed...  He is able to motivate teams, and everyone wants to work with him.",
+    url: "https://www.linkedin.com/in/rob-sliwa-5609b01/",
   },
   {
     name: "Emma Bostian",
@@ -20,15 +20,6 @@ const REFS = [
     company: "Spotify",
     text: "I don't have enough kind words to describe John... He was always willing to jump into difficult tasks. And he made everyone feel welcomed and included...Any company would be lucky to have John. I hope we can work together in the future.",
     url: "https://www.linkedin.com/in/emmabostian/",
-  },
-  {
-    name: "Rob Sliwa",
-    image_url:
-      "https://media.licdn.com/dms/image/C5103AQH5XHsE_xT0Pg/profile-displayphoto-shrink_100_100/0/1516349636068?e=1680134400&v=beta&t=-lDFPKR5rLtYIXYq1RlfvsvYT3P_YNBCxk3NM3G-5DI",
-    role: "Senior Systems Engineer",
-    company: "Somos & Comcast",
-    text: "John is one of the most creative front-end developers I ever worked with. When faced with the need to learn new technologies, he never hesitated and was very quick in getting himself up to speed...  He is able to motivate teams, and everyone wants to work with him.",
-    url: "https://www.linkedin.com/in/rob-sliwa-5609b01/",
   },
   {
     name: "Danielle Nourok",
@@ -47,6 +38,15 @@ const REFS = [
     company: "Spotify",
     text: "[John] was an exceptional teammate and engineering partner. He is knowledgeable, efficient, and cares deeply about quality engineering. I really enjoyed working alongside John - any team would be lucky to have him as a teammate.",
     url: "https://www.linkedin.com/in/stevenjbruno/",
+  },
+  {
+    name: "Brian Isely",
+    image_url:
+      "https://media.licdn.com/dms/image/C4E03AQFIZOJbydZZug/profile-displayphoto-shrink_100_100/0/1614623125118?e=1680134400&v=beta&t=f7dt4mg6MK55290jXv3o-0vXOzf39jdLILAdrC9pEMU",
+    role: "Executive VP",
+    company: "Center City Film & Video",
+    text: "[John] is always on time, focused, courteous, extremely intelligent, humble and hard working. I give John my highest recommendation and am certain he will be an asset to any organization that is lucky enough to employ him.",
+    url: "https://www.linkedin.com/in/brianisely/",
   },
   {
     name: "Steven 'Mac' McKeon",
