@@ -1,5 +1,5 @@
 :root {
-    --thing-size: 80px;
+    --thing-size: 70px;
 }
 
 .thing {
@@ -21,7 +21,7 @@
 
 .thing:hover {
     scale: 1.1;
-    box-shadow: 0px 0px 10px rgb(255,255,255,.8);
+    box-shadow: 0px 0px 10px rgb(0,0,0,.8);
 }
 
 .thing > img {
@@ -35,6 +35,7 @@
     opacity: 0;
     scale: .25;
     translate: 0px calc(var(--thing-size)/2);
+    text-shadow: 0px 0px 0px rgb(0,0,0,.8);
     transition: .2s ease;
 }
 
@@ -42,6 +43,7 @@
     opacity: 1;
     scale: 1;
     translate: 0px calc(var(--thing-size)/2 + 10px);
+    text-shadow: 0px 0px 10px rgb(0,0,0,.8);
     transition: .2s ease;
 }
 

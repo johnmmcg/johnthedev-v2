@@ -15,13 +15,13 @@ module.exports = {
       },
       keyframes: {
         wiggle: {
-          '50%': { transform: 'rotate(-15deg)' },
-          '25%, 75%': { transform: 'rotate(15deg)' },
+          '20%, 60%': { transform: 'rotate(-15deg)' },
+          '40%, 80%': { transform: 'rotate(15deg)' },
           '0, 100%': { transform: 'rotate(0deg)'}
         }
       },
       animation: {
-        wiggle: 'wiggle 2s ease-in-out',
+        wiggle: 'wiggle 2s ease-in-out'
       }
     },
   },
