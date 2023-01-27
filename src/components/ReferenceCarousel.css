@@ -6,8 +6,8 @@
     content: '';
     position: absolute;
     left: 0;
-    top: 0;
-    height: 100%;
+    top: 10px;
+    height: 90%;
     width: 16px;
     z-index: 10;
     background: linear-gradient(to right, rgba(243, 244, 246, 1), rgba(243, 244, 246, 0));
@@ -16,8 +16,8 @@
     content: '';
     position: absolute;
     right: 0;
-    top: 0;
-    height: 100%;
+    top: 10px;
+    height: 90%;
     width: 16px;
     z-index: 10;
     background: linear-gradient(to left, rgba(243, 244, 246, 1), rgba(243, 244, 246, 0));
