@@ -13,15 +13,6 @@ const REFS = [
     url: "https://www.linkedin.com/in/rob-sliwa-5609b01/",
   },
   {
-    name: "Emma Bostian",
-    image_url:
-      "https://media.licdn.com/dms/image/C4D03AQEvPrBvNujANA/profile-displayphoto-shrink_100_100/0/1603366792796?e=1680134400&v=beta&t=IvR5XqgqrKDiVP6PvjyaxsJdXTua0SQT0e3NpOI7p1Q",
-    role: "Engineering Manager",
-    company: "Spotify",
-    text: "I don't have enough kind words to describe John... He was always willing to jump into difficult tasks. And he made everyone feel welcomed and included...Any company would be lucky to have John. I hope we can work together in the future.",
-    url: "https://www.linkedin.com/in/emmabostian/",
-  },
-  {
     name: "Danielle Nourok",
     image_url:
       "https://media.licdn.com/dms/image/C4E03AQEMSZRFhyJdIQ/profile-displayphoto-shrink_100_100/0/1517533808518?e=1680134400&v=beta&t=zHKzkVtIvu9cxi6t1wvZdOfy0uj5eBxY0iHbu9JBDfE",
@@ -29,6 +20,15 @@ const REFS = [
     company: "Spotify & Disney",
     text: "John is an example of a team player. He is an excellent communicator, supportive to his teammates and a very positive person. He is a problem solver and excels at breaking down technical requirements, working cross team and debugging tough problems.",
     url: "https://www.linkedin.com/in/dnourok/",
+  },
+  {
+    name: "Emma Bostian",
+    image_url:
+      "https://media.licdn.com/dms/image/C4D03AQEvPrBvNujANA/profile-displayphoto-shrink_100_100/0/1603366792796?e=1680134400&v=beta&t=IvR5XqgqrKDiVP6PvjyaxsJdXTua0SQT0e3NpOI7p1Q",
+    role: "Engineering Manager",
+    company: "Spotify",
+    text: "I don't have enough kind words to describe John... He was always willing to jump into difficult tasks. And he made everyone feel welcomed and included...Any company would be lucky to have John. I hope we can work together in the future.",
+    url: "https://www.linkedin.com/in/emmabostian/",
   },
   {
     name: "Steven Bruno",
@@ -40,15 +40,6 @@ const REFS = [
     url: "https://www.linkedin.com/in/stevenjbruno/",
   },
   {
-    name: "Brian Isely",
-    image_url:
-      "https://media.licdn.com/dms/image/C4E03AQFIZOJbydZZug/profile-displayphoto-shrink_100_100/0/1614623125118?e=1680134400&v=beta&t=f7dt4mg6MK55290jXv3o-0vXOzf39jdLILAdrC9pEMU",
-    role: "Executive VP",
-    company: "Center City Film & Video",
-    text: "[John] is always on time, focused, courteous, extremely intelligent, humble and hard working. I give John my highest recommendation and am certain he will be an asset to any organization that is lucky enough to employ him.",
-    url: "https://www.linkedin.com/in/brianisely/",
-  },
-  {
     name: "Steven 'Mac' McKeon",
     image_url:
       "https://media.licdn.com/dms/image/C4E03AQFoIRt_1knqwQ/profile-displayphoto-shrink_100_100/0/1604251048311?e=1680134400&v=beta&t=Typ8Ano26db2CLdDaAWr3m383SqvA6cbZdeRTswwaOE",
@@ -56,6 +47,15 @@ const REFS = [
     company: "MacGuyverTech",
     text: "[John] was routinely throughout that time the most creative and capable web developer we had. His coding was excellent and his designs were unique and innovative, so clients were always happy. He was always thoughtful and considerate, an excellent team player...",
     url: "https://www.linkedin.com/in/stevenpmckeon/",
+  },
+  {
+    name: "Brian Isely",
+    image_url:
+      "https://media.licdn.com/dms/image/C4E03AQFIZOJbydZZug/profile-displayphoto-shrink_100_100/0/1614623125118?e=1680134400&v=beta&t=f7dt4mg6MK55290jXv3o-0vXOzf39jdLILAdrC9pEMU",
+    role: "Executive VP",
+    company: "Center City Film & Video",
+    text: "[John] is always on time, focused, courteous, extremely intelligent, humble and hard working. I give John my highest recommendation and am certain he will be an asset to any organization that is lucky enough to employ him.",
+    url: "https://www.linkedin.com/in/brianisely/",
   },
 ];
 
