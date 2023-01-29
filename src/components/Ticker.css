@@ -1,0 +1,30 @@
+.tickerContainer {
+    height: 44px;
+    width: 318px;
+    position: relative;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0px 0px 10px rgb(0,0,0,.8);
+}
+
+.ticker {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    /* animation: 1750ms scroll-to-bottom cubic-bezier(0, 0.55, 0.45, 1); */
+    animation-fill-mode: forwards;
+    top: 0%;
+}
+
+@media screen and (min-width: 640px) {
+    .tickerContainer {
+        width: 380px;
+        height: 48px;
+    }
+}
+
+@keyframes scroll-to-bottom {
+    0% { top: 0%; filter: blur(0px); }
+    50% { filter: blur(2px); }
+    100% { top: -1500%; filter: blur(0px); }
+}

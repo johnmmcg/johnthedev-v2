@@ -65,7 +65,7 @@ export default function Ring() {
         let dangle = 360 / things.length;
         let translateSize = isSmallScreen ? ringGraph.clientWidth /
         2 - 30 : ringGraph.clientWidth /
-        2
+        2 + 20
         for (let i = 0; i < things.length; i++) {
           let circle = things[i];
           angle += dangle;

@@ -15,12 +15,12 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0px 0px 0px transparent;
-    transition: all .2s ease-in-out, transform 1500ms ease-in-out;
+    box-shadow: 0px 0px 5px rgb(0,0,0,.8);
+    transition: all .2s ease-in-out, transform 1750ms cubic-bezier(.1, 0, 0.24, 1);
 }
 
 .thing:hover {
-    scale: 1.1;
+    scale: 1.05;
     box-shadow: 0px 0px 10px rgb(0,0,0,.8);
 }
 
