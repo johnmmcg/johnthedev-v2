@@ -62,7 +62,7 @@ const REFS = [
 const Reference = ({ item, idx }) => {
   return (
     <div
-      className={`reference flex w-[350px] sm:w-[300px] flex-col gap-3 justify-start p-4 pb-0 lg:p-2 fade-in`}
+      className={`reference flex w-[350px] sm:w-[300px] flex-col gap-3 justify-start p-4 pt-5 pb-0 lg:p-2 fade-in`}
     >
       <a
         href={item.url}
