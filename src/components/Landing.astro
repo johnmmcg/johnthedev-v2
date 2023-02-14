@@ -1,51 +1,128 @@
 ---
-import Avatar from "./Avatar.astro";
-import Ring from "./Ring.jsx";
+import Avatar from './Avatar.astro';
+import Ring from './Ring.jsx';
 import ReferenceCarousel from './ReferenceCarousel';
-import '../input.css'
-import Ticker, { SPECIALTIES_REVERSED } from "./Ticker";
-
+import '../input.css';
+import Ticker, { SPECIALTIES_REVERSED } from './Ticker';
 ---
 
-<div class="h-auto md:h-screen w-full relative overflow-x-hidden bg-slate-900 bg-gradient-to-tr from-slate-700 flex flex-col text-center">
-    <div class="flex flex-col relative fade-in text-4xl text-white font-bold items-center justify-center m-auto p-2 gap-2">
-        <h2 class="text-3xl sm:text-4xl">
-            Hi 
-			<p class="inline-block rotate-[15deg] animate-wiggle hover:animate-[wiggle_1s_linear_infinite] hover:cursor-none">
-				👋🏼
-			</p>
-        </h2>
-        <h1 class="text-2xl sm:text-4xl">
-			I'm John McGuinness ☕️
-		</h1>
+<div
+  class="h-auto md:h-screen w-full relative overflow-x-hidden bg-slate-900 bg-gradient-to-tr from-slate-700 flex flex-col text-center"
+>
+  <div
+    class="flex flex-col relative fade-in text-4xl text-white font-bold items-center justify-center m-auto p-2 gap-2"
+  >
+    <h2 class="text-3xl sm:text-4xl">
+      Hi
+      <p
+        class="inline-block rotate-[15deg] animate-wiggle hover:animate-[wiggle_1s_linear_infinite] hover:cursor-none"
+      >
+        👋🏼
+      </p>
+    </h2>
+    <h1 class="text-2xl sm:text-4xl">I'm John McGuinness ☕️</h1>
+  </div>
+  <div class="flex h-1/2 sm:h-[500px] relative fade-in">
+    <Ring client:load />
+    <Avatar />
+  </div>
+  <div
+    class="flex flex-col relative fade-in text-white font-bold items-center justify-center m-auto p-2 gap-6 text-center text-xl sm:text-2xl sm:leading-loose leading-loose sm:align-bottom"
+  >
+    <h2>
+      I'm a <span
+        class="text-xl sm:text-2xl text-slate-700 bg-white p-2 font-bold shadow"
+        >Web Engineer</span
+      > based in Philadelphia 💙
+    </h2>
+    <div
+      class="flex sm:flex-row flex-col items-center justify-center sm:gap-2 gap-1"
+    >
+      <h2>I specialize in</h2>
+      <Ticker
+        client:load
+        items={SPECIALTIES_REVERSED}
+      />
     </div>
-    <div class="flex h-1/2 sm:h-[500px] relative fade-in">
-        <Ring client:load />
-        <Avatar />
+  </div>
+  <div
+    class="flex flex-col relative fade-in text-white font-bold items-center justify-center m-auto p-2 gap-2 text-center mt-2 text-base sm:text-2xl"
+  >
+    <h2>
+      I've worked with some talented folks who have
+      <br class="sm:hidden" />
+      <a
+        class="text-indigo-300 hover:underline hover:text-indigo-200 transition duration-100"
+        href="https://www.linkedin.com/in/johnmmcg/details/recommendations/?detailScreenTabIndex=0"
+        target="_blank"
+      >
+        great things to say about me!
+      </a>
+    </h2>
+  </div>
+  <div class="h-auto relative">
+    <ReferenceCarousel client:load />
+  </div>
+
+  <footer class="w-full flex flex-col bg-gray-900 text-gray-100 p-4 gap-4">
+    <ul class="flex-1 flex items center justify-evenly">
+      <li class="hover:underline">
+        <a
+          href="/john_mcguinness_resume.pdf"
+          target="_blank"
+        >
+          Resume
+        </a>
+      </li>
+      <li class="hover:underline">
+        <a
+          href="https://www.linkedin.com/in/johnmmcg/"
+          target="_blank"
+        >
+          LinkedIn
+        </a>
+      </li>
+      <li class="hover:underline">
+        <a
+          href="https://github.com/johnmmcg"
+          target="_blank"
+        >
+          GitHub
+        </a>
+      </li>
+      <li class="hover:underline">
+        <a
+          href="https://github.com/johnmmcg/johnthedev-v2"
+          target="_blank"
+        >
+          Source Code
+        </a>
+      </li>
+    </ul>
+    <hr />
+    <div class="flex flex-col w-full">
+      <p>Designed & Developed with 💙 by John Maurer McGuinness</p>
+      <ul class="flex w-full justify-center gap-2">
+        <li>
+          <a
+            href="https://www.johnthedev.com/"
+            class="hover:underline"
+          >
+            JohnTheDev.com</a
+          >
+        </li>
+        <span>|</span>
+        <li>
+          <a
+            href="/license"
+            class="hover:underline"
+          >
+            MIT License</a
+          >
+        </li>
+        <span>|</span>
+        <li>Copyright © 2023</li>
+      </ul>
     </div>
-    <div class="flex flex-col relative fade-in text-white font-bold items-center justify-center m-auto p-2 gap-6 text-center text-xl sm:text-2xl sm:leading-loose leading-loose sm:align-bottom ">
-        <h2>
-            I'm a <span class="text-xl sm:text-2xl text-slate-700 bg-white p-2 font-bold shadow">Web Engineer</span> based in Philadelphia 💙 
-        </h2>
-        <div class="flex sm:flex-row flex-col items-center justify-center sm:gap-2 gap-1">
-            <h2>I specialize in </h2>
-            <Ticker client:load items={SPECIALTIES_REVERSED} />
-        </div>
-    </div>
-    <div class="flex flex-col relative fade-in text-white font-bold items-center justify-center m-auto p-2 gap-2 text-center mt-2 text-base sm:text-2xl">
-        <h2>
-            I've worked with some talented folks who have
-            <br class="sm:hidden"> 
-            <a
-                class="text-indigo-300 hover:underline hover:text-indigo-200 transition duration-100"
-                href="https://www.linkedin.com/in/johnmmcg/details/recommendations/?detailScreenTabIndex=0" 
-                target="_blank"
-            >
-                great things to say about me!
-            </a>
-        </h2>
-    </div>
-    <div class="h-auto relative">
-        <ReferenceCarousel client:load />
-    </div>
+  </footer>
 </div>
