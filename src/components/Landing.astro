@@ -64,8 +64,12 @@ import Ticker, { SPECIALTIES_REVERSED } from './Ticker';
     <ReferenceCarousel client:load />
   </div>
 
-  <footer class="w-full flex flex-col bg-gray-900 text-gray-100 p-4 gap-4">
-    <ul class="flex-1 flex items center justify-evenly">
+  <footer
+    class="w-full flex flex-col bg-gray-900 text-gray-100 p-4 gap-4 justify-center items-center"
+  >
+    <ul
+      class="flex-1 flex flex-col sm:flex-row items center justify-evenly w-full max-w-2xl gap-4 sm:gap-2"
+    >
       <li class="hover:underline">
         <a
           href="/john_mcguinness_resume.pdf"
@@ -99,10 +103,12 @@ import Ticker, { SPECIALTIES_REVERSED } from './Ticker';
         </a>
       </li>
     </ul>
-    <hr />
-    <div class="flex flex-col w-full">
+    <hr class="w-full" />
+    <div class="flex flex-col w-full gap-2">
       <p>Designed & Developed with 💙 by John Maurer McGuinness</p>
-      <ul class="flex w-full justify-center gap-2">
+      <ul
+        class="w-full flex flex-col sm:flex-row justify-center gap-4 sm:gap-2"
+      >
         <li>
           <a
             href="https://www.johnthedev.com/"
@@ -111,7 +117,7 @@ import Ticker, { SPECIALTIES_REVERSED } from './Ticker';
             JohnTheDev.com</a
           >
         </li>
-        <span>|</span>
+        <span class="hidden sm:inline-block">|</span>
         <li>
           <a
             href="/license"
@@ -120,7 +126,7 @@ import Ticker, { SPECIALTIES_REVERSED } from './Ticker';
             MIT License</a
           >
         </li>
-        <span>|</span>
+        <span class="hidden sm:inline-block">|</span>
         <li>Copyright © 2023</li>
       </ul>
     </div>
