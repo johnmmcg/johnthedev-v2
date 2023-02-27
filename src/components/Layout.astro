@@ -1,25 +1,59 @@
 ---
 export interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="h-screen">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width">
-  <meta name="description" content="John the Dev: An online portfolio by John McGuinness">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600;800&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link href="/dist/output.css" rel="stylesheet">
-	<title>{title}</title>
-</head>
-<body class="h-screen bg-black flex justify-center">
-	<slot />
-</body>
+<html
+  lang="en"
+  class="h-screen"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width"
+    />
+    <meta
+      name="description"
+      content="John the Dev: An online portfolio by John McGuinness"
+    />
+    <meta
+      property="image"
+      content="/johnthedev_preview.png"
+    />
+    <meta
+      property="og:image"
+      content="/johnthedev_preview.png"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/favicon.ico"
+    />
+    <link
+      href="/dist/output.css"
+      rel="stylesheet"
+    />
+    <title>{title}</title>
+  </head>
+  <body class="h-screen bg-black flex justify-center">
+    <slot />
+  </body>
 </html>

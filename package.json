@@ -3,6 +3,7 @@
   "version": "2.0.1",
   "private": false,
   "author": "John McGuinness <john.maurer.mcguinnes@gmail.com> (johnthedev.com)",
+  "license": "MIT",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
