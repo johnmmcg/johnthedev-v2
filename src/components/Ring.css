@@ -15,11 +15,11 @@
     }
 }
 
-.animate-spin {
+.animate-spin-once {
     animation-name: rotate;
     animation-iteration-count: 1;
     animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
-    animation-duration: 1s;
+    animation-duration: 1750ms;
 }
 
 @keyframes rotate {

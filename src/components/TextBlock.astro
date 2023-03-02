@@ -1,36 +1,17 @@
 ---
-import ReferenceCarousel from './ReferenceCarousel.jsx';
-import '../input.css'
+import '../input.css';
+import Ticker from './Ticker';
 ---
 
-<section class="flex flex-col justify-center items-center m-auto md:mb-8 max-w-4xl">
-	<main class="bg-gray-100 shadow-lg shadow-slate-900/50 dark:shadow-slate-700/50 border rounded-xl border-slate-200 flex flex-col justify-center items-center text-center p-2 m-2 md:m-4 w-full min-h-[356px] enter-from-bottom">
-		<!-- <h1 class="text-xl font-bold mb-2">
-			Hi 
-			<p class="inline-block hover:animate-[wiggle_1s_linear_infinite] hover:cursor-none">
-				👋🏼
-			</p>
-			<br class="md:hidden"> 
-			I'm John McGuinness ☕️
-		</h1> -->
-		<!-- <h2 class="mb-4 text-sm md:text-base">
-			I'm a Web Engineer based in Philadelphia 💙 
-			<br>
-			I specialize in building User Interfaces 💻
-			<br>
-			I've worked with some talented folks who have
-			<br class="sm:hidden"> 
-			<a
-				class="text-indigo-500 hover:underline hover:text-indigo-400 transition duration-100"
-				href="https://www.linkedin.com/in/johnmmcg/details/recommendations/?detailScreenTabIndex=0" 
-				target="_blank"
-			>
-				great things to say about me!
-			</a>
-			<br>
-		</h2> -->
-		<div class="h-[250px] w-full overflow-hidden">
-			<ReferenceCarousel client:load />
-		</div>
-	</main>
-</section>
+<h2>
+  I'm a <span
+    class="bg-white p-2 text-xl font-bold text-slate-700 shadow sm:text-2xl"
+    >Web Engineer</span
+  > based in Philadelphia 💙
+</h2>
+<div
+  class="flex flex-col items-center justify-center gap-1 sm:flex-row sm:gap-2"
+>
+  <h2>I specialize in</h2>
+  <Ticker client:load />
+</div>

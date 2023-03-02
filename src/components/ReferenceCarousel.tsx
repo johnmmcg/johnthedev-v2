@@ -71,27 +71,27 @@ const REFS = [
 const Reference = ({ item, idx }) => {
   return (
     <div
-      className={`reference flex w-[350px] sm:w-[300px] flex-col gap-3 justify-start p-4 pt-5 pb-0 lg:p-2 fade-in`}
+      className={`reference fade-in flex w-[350px] flex-col justify-start gap-3 p-4 pt-5 pb-0 sm:w-[300px] lg:p-2`}
     >
       <a
         href={item.url}
         target="_blank"
-        className="flex flex-row gap-2 items-center hover:underline"
+        className="flex flex-row items-center gap-2 hover:underline"
       >
         <img
-          className="rounded-full w-auto"
+          className="w-auto rounded-full"
           style={{ height: '60px' }}
           src={item.image_url}
           alt={`LinkedIn Profile Image of ${item.name}`}
         />
-        <p className="flex flex-col justify-center items-start text-left text-xs">
+        <p className="flex flex-col items-start justify-center text-left text-xs">
           <b>{item.name}</b>
           <span className="text-xs">
             {item.role} at {item.company}
           </span>
         </p>
       </a>
-      <p className="text-left italic text-sm">"{item.text}"</p>
+      <p className="text-left text-sm italic">"{item.text}"</p>
     </div>
   );
 };
@@ -121,11 +121,11 @@ const ReferenceCarousel = ({ items = REFS }) => {
   };
 
   return (
-    <section className="flex flex-col justify-center items-center m-auto md:mb-8 max-w-4xl w-full">
-      <main className="bg-gray-100 shadow-lg shadow-slate-900/50 dark:shadow-slate-700/50 border rounded-xl border-slate-200 flex flex-col justify-center items-center text-center m-2 w-full enter-from-bottom relative">
+    <section className="m-auto flex w-full max-w-4xl flex-col items-center justify-center md:mb-8">
+      <main className="enter-from-bottom relative m-2 flex w-full flex-col items-center justify-center rounded-xl border border-slate-200 bg-gray-100 text-center shadow-lg shadow-slate-900/50 dark:shadow-slate-700/50">
         <div
           id="listRowContainer"
-          className="flex flex-row center justify-center w-full gap-6 h-[260px] transition overflow-hidden relative rounded-xl"
+          className="center relative flex h-[260px] w-full flex-row justify-center gap-6 overflow-hidden rounded-xl motion-safe:transition"
         >
           <div
             id="listRow"
@@ -142,18 +142,18 @@ const ReferenceCarousel = ({ items = REFS }) => {
             })}
           </div>
         </div>
-        <div className="flex flex-row items-center justify-center w-full">
+        <div className="flex w-full flex-row items-center justify-center">
           <button
             onClick={handlePreviousClick}
-            className="scale-1 transition z-10 self-end flex-1 rounded-bl-xl hover:bg-gray-300 p-2"
+            className="scale-1 z-10 flex-1 self-end rounded-bl-xl p-2 transition hover:bg-gray-300"
           >
-            <p className="scale-1 hover:scale-125 transition">←</p>
+            <p className="scale-1 transition hover:scale-125">←</p>
           </button>
           <button
             onClick={handleNextClick}
-            className="scale-1 transition z-10 self-end flex-1 rounded-br-xl hover:bg-gray-300 p-2"
+            className="scale-1 z-10 flex-1 self-end rounded-br-xl p-2 transition hover:bg-gray-300"
           >
-            <p className="scale-1 hover:scale-125 transition">→</p>
+            <p className="scale-1 transition hover:scale-125">→</p>
           </button>
         </div>
       </main>
