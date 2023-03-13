@@ -1,0 +1,27 @@
+---
+import technologies from '../constants/technologies';
+---
+
+<section
+  id="tech-list"
+  class="text-white"
+>
+  <ul
+    class="my-10 grid grid-cols-4 items-center justify-center gap-5 text-xs sm:gap-8 sm:text-sm lg:grid-cols-8"
+  >
+    {
+      technologies.map(({ label, icon }) => {
+        return (
+          <li class="flex h-full flex-1 flex-col items-center justify-between gap-2 transition hover:scale-110">
+            <img
+              class="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16"
+              src={icon}
+              alt={label}
+            />
+            <span>{label}</span>
+          </li>
+        );
+      })
+    }
+  </ul>
+</section>

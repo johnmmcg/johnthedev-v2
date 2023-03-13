@@ -13,7 +13,7 @@ export function useDebounce(fn, delay) {
   };
 }
 
-export const SMALL_SCREEN_THRESHOLD = 820;
+export const SMALL_SCREEN_THRESHOLD = 768;
 
 export function useWindowSize(debounceMs = 250) {
   const [size, setSize] = useState([0, 0]);
@@ -28,6 +28,6 @@ export function useWindowSize(debounceMs = 250) {
   }, []);
 
   const [width, height] = size;
-  const isSmallScreen = width <= SMALL_SCREEN_THRESHOLD;
+  const isSmallScreen = width < SMALL_SCREEN_THRESHOLD;
   return { width, height, isSmallScreen };
 }

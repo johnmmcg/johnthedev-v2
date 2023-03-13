@@ -46,7 +46,7 @@ const things = [
     label: 'Resume',
     icon: resumeSvg,
     color: '#00b894',
-    url: '/john_mcguinness_resume.pdf',
+    url: '/John_McGuinness_Resume_2023.pdf',
     title: 'Resume Icon by Adrien Coquet',
   },
 ];

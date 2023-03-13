@@ -1,0 +1,23 @@
+---
+---
+
+<script>
+  const callback = function (entries) {
+    entries.forEach((entry) => {
+      // Is the element in the viewport?
+      if (entry.isIntersecting) {
+        // Add the fadeIn class:
+        entry.target.classList.add('motion-safe:animate-fadeIn');
+      } else {
+        // Otherwise remove the fadein class
+        entry.target.classList.remove('motion-safe:animate-fadeIn');
+      }
+    });
+  };
+  const targets = document.querySelectorAll('.js-show-on-scroll');
+  const observer = new IntersectionObserver(callback);
+  targets.forEach(function (target) {
+    target.classList.add('opacity-0');
+    observer.observe(target);
+  });
+</script>

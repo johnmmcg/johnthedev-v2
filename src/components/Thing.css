@@ -1,61 +1,62 @@
 :root {
-    --thing-size: 70px;
+  --thing-size: 70px;
 }
 
 .thing {
-    display: flex;
-    width: var(--thing-size);
-    height: var(--thing-size);
-    border-radius: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: calc(-1 * var(--thing-size) / 2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0px 0px 5px rgb(0,0,0,.8);
-    transition: all .2s ease-in-out, transform 1750ms cubic-bezier(.1, 0, 0.24, 1);
+  display: flex;
+  width: var(--thing-size);
+  height: var(--thing-size);
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: calc(-1 * var(--thing-size) / 2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px rgb(0, 0, 0, 0.8);
+  transition: all 0.2s ease-in-out,
+    transform 1750ms cubic-bezier(0.1, 0, 0.24, 1);
 }
 
 .thing:hover {
-    scale: 1.05;
-    box-shadow: 0px 0px 10px rgb(0,0,0,.8);
+  scale: 1.05;
+  box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.8);
 }
 
 .thing > img {
-    width: 100%;
-    height: auto;
-    transition: all .25s ease-in-out;
+  width: 100%;
+  height: auto;
+  transition: all 0.25s ease-in-out;
 }
 
 .thing > h3 {
-    position: absolute;
-    opacity: 0;
-    scale: .25;
-    translate: 0px calc(var(--thing-size)/2);
-    text-shadow: 0px 0px 0px rgb(0,0,0,.8);
-    transition: .2s ease;
+  position: absolute;
+  opacity: 0;
+  scale: 0.25;
+  translate: 0px calc(var(--thing-size) / 2);
+  text-shadow: 0px 0px 0px rgb(0, 0, 0, 0.8);
+  transition: 0.2s ease;
 }
 
 .thing:hover > h3 {
-    opacity: 1;
-    scale: 1;
-    translate: 0px calc(var(--thing-size)/2 + 10px);
-    text-shadow: 0px 0px 10px rgb(0,0,0,.8);
-    transition: .2s ease;
+  opacity: 1;
+  scale: 1;
+  translate: 0px calc(var(--thing-size) / 2 + 10px);
+  text-shadow: 0px 0px 10px rgb(0, 0, 0, 0.8);
+  transition: 0.2s ease;
 }
 
 @media (min-width: 768px) {
-    :root {
-        --thing-size: 90px;
-    }
+  :root {
+    --thing-size: 90px;
+  }
 
-    .thing:hover > h3 {
-        opacity: 1;
-        scale: 1;
-        translate: 0px calc(var(--thing-size)/2 + 16px);
-        transition: .2s ease;
-    }
+  .thing:hover > h3 {
+    opacity: 1;
+    scale: 1;
+    translate: 0px calc(var(--thing-size) / 2 + 16px);
+    transition: 0.2s ease;
+  }
 }

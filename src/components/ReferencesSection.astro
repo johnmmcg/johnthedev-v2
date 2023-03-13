@@ -1,22 +1,54 @@
 ---
 import ReferenceCarousel from './ReferenceCarousel';
+import REFS from '../constants/references';
+import Reference from './Reference';
 ---
 
-<div
-  class="fade-in relative m-auto mt-2 flex flex-col items-center justify-center gap-2 p-2 text-center text-base font-bold text-white sm:text-2xl"
+<section
+  class="m-auto mt-2 flex h-auto max-w-4xl flex-col gap-8 p-2 text-center text-base font-bold text-white sm:text-2xl"
 >
   <h2>
     I've worked with some talented folks who have
-    <br class="sm:hidden" />
+    <br />
     <a
-      class="text-indigo-300 transition duration-100 hover:text-indigo-200 hover:underline"
+      class="bg-gradient-to-tr from-teal-600 to-green-400 bg-clip-text text-xl font-extrabold text-transparent transition hover:text-green-400 hover:underline sm:text-4xl"
       href="https://www.linkedin.com/in/johnmmcg/details/recommendations/?detailScreenTabIndex=0"
       target="_blank"
     >
       great things to say about me!
     </a>
   </h2>
-</div>
-<div class="relative h-auto">
+  <ul class="flex w-full flex-col items-center justify-center gap-12 p-4">
+    {
+      REFS.map((item, idx) => (
+        <li
+          class="js-show-on-scroll flex h-full w-2/3 flex-col justify-center gap-6"
+          data-animate-type="motion-safe:animate-fadeIn"
+        >
+          <p class="text-md text-justify">"{item.text}"</p>
+          <a
+            href={item.url}
+            target="_blank"
+            class="group flex w-full flex-row items-start justify-end gap-2 transition hover:underline"
+          >
+            <img
+              class="w-auto rounded-full border border-transparent transition group-hover:border-gray-50"
+              style={{ height: '60px' }}
+              src={item.image_url}
+              alt={`LinkedIn Profile Image of ${item.name}`}
+            />
+            <p class="flex w-full flex-col text-left font-thin">
+              {item.name}
+              <span class="text-sm italic">
+                {item.role} at {item.company}
+              </span>
+            </p>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+<!-- <div class="relative h-auto">
   <ReferenceCarousel client:load />
-</div>
+</div> -->
