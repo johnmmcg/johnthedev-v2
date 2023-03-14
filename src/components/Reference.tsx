@@ -1,7 +1,7 @@
 export default function Reference({ item, idx }) {
   return (
     <div className="flex h-full w-auto flex-col items-start justify-start gap-3">
-      <p className="text-md text-left">"{item.text}"</p>
+      <p className="text-md text-left">{item.text}</p>
       <a
         href={item.url}
         target="_blank"

@@ -5,7 +5,7 @@ import Reference from './Reference';
 ---
 
 <section
-  class="m-auto mt-2 flex h-auto max-w-4xl flex-col gap-8 p-2 text-center text-base font-bold text-white sm:text-2xl"
+  class="m-auto mt-2 flex h-auto max-w-6xl flex-col gap-8 p-2 text-center text-base font-bold text-white sm:text-2xl"
 >
   <h2>
     I've worked with some talented folks who have
@@ -22,22 +22,27 @@ import Reference from './Reference';
     {
       REFS.map((item, idx) => (
         <li
-          class="js-show-on-scroll flex h-full w-2/3 flex-col justify-center gap-6"
+          class="js-show-on-scroll flex h-full w-full max-w-2xl flex-col justify-center gap-2  sm:w-4/5 sm:gap-3"
           data-animate-type="motion-safe:animate-fadeIn"
         >
-          <p class="text-md text-justify">"{item.text}"</p>
+          <div class="relative mx-[30px] mb-[12px]">
+            <p class="text-md rounded-2xl rounded-bl-none bg-blue-900 p-3 text-justify font-normal ">
+              {item.text}
+            </p>
+            <div class="position absolute bottom-[-12px] left-0 h-[12px] w-[12px] border-[6px] border-transparent border-l-blue-900 border-t-blue-900" />
+          </div>
           <a
             href={item.url}
             target="_blank"
-            class="group flex w-full flex-row items-start justify-end gap-2 transition hover:underline"
+            class="group flex w-full flex-row items-center justify-end gap-2 transition"
           >
             <img
-              class="w-auto rounded-full border border-transparent transition group-hover:border-gray-50"
-              style={{ height: '60px' }}
+              class="w-auto rounded-full"
+              style={{ width: '60px' }}
               src={item.image_url}
               alt={`LinkedIn Profile Image of ${item.name}`}
             />
-            <p class="flex w-full flex-col text-left font-thin">
+            <p class="flex w-full flex-col text-left font-thin underline group-hover:text-blue-200">
               {item.name}
               <span class="text-sm italic">
                 {item.role} at {item.company}
