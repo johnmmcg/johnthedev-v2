@@ -1,0 +1,108 @@
+---
+import ScrollPosition from '../scripts/ScrollPosition.astro';
+---
+
+<div
+  id="sticky-logo"
+  class="hover:cursor fixed top-0 left-0 z-50 h-[60px] w-[60px] self-start bg-transparent drop-shadow-2xl transition sm:h-[100px] sm:w-[100px]"
+>
+  <a
+    href="/#top"
+    class="relative flex h-full w-full items-center justify-center"
+  >
+    <div
+      class="cube-wrap text-xm font-extrabold text-white transition sm:text-2xl"
+    >
+      <div class="cube">
+        <div class="side top">
+          <p>JM</p>
+        </div>
+        <div class="side bottom">
+          <p>JM</p>
+        </div>
+        <div class="side front">
+          <p>JM</p>
+        </div>
+        <div class="side back">
+          <p>JM</p>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>
+
+<style>
+  .cube-wrap {
+    --size: 50px;
+    width: var(--size);
+    height: var(--size);
+    perspective: 100vmin;
+  }
+
+  @media only screen and (max-width: 640px) {
+    .cube-wrap {
+      --size: 30px;
+      /* top: calc(var(--size)); */
+      /* left: calc(var(--size)); */
+    }
+  }
+
+  .cube {
+    width: var(--size);
+    height: var(--size);
+    transform-style: preserve-3d;
+    transform: rotateX(0deg);
+    animation: cube 1s linear;
+  }
+  @keyframes cube {
+    to {
+      transform: rotateX(-360deg);
+    }
+  }
+
+  .side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    background-color: #1e293b;
+    backface-visibility: visible;
+    border: 2px solid white;
+    z-index: 1;
+  }
+  .top {
+    background-color: #059669;
+    background: radial-gradient(circle at center, #064e3b, #059669);
+    transform: rotateX(90deg) translateZ(calc(var(--size) * 0.5));
+  }
+  .bottom {
+    background-color: #059669;
+    background: radial-gradient(circle at center, #064e3b, #059669);
+    transform: rotateX(90deg) translateZ(calc(var(--size) * -0.5)) scaleY(-1);
+  }
+  .front {
+    background-color: #059669;
+    background: radial-gradient(circle at center, #064e3b, #059669);
+
+    transform: translateZ(calc(var(--size) * 0.5));
+  }
+  .back {
+    background-color: #059669;
+    background: radial-gradient(circle at center, #064e3b, #059669);
+
+    transform: translateZ(calc(var(--size) * -0.5)) scaleY(-1);
+  }
+
+  #sticky-logo * {
+    /* Pause the animation */
+    animation-play-state: paused;
+    /* Bind the animation to scroll */
+    animation-delay: calc(var(--scroll) * -1s);
+    /* These last 2 properites clean up overshoot weirdness */
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+  }
+</style>
+<ScrollPosition />

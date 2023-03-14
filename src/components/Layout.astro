@@ -16,7 +16,10 @@ const { title } = Astro.props as Props;
   <Head>
     <title>{title}</title>
   </Head>
-  <body class="flex h-screen justify-center bg-black">
+  <body
+    class="relative flex h-auto flex-col justify-center bg-black"
+    style="--scroll:0.001"
+  >
     <slot />
   </body>
 </html>
