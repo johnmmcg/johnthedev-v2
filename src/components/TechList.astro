@@ -4,7 +4,7 @@ import technologies from '../constants/technologies';
 
 <section
   id="tech-list"
-  class="text-white"
+  class="fade-in relative m-auto flex flex-col items-center justify-center gap-6 p-2 text-center text-xl font-bold leading-loose text-white sm:align-bottom sm:text-2xl sm:leading-loose"
 >
   <ul
     class="my-10 grid grid-cols-4 items-center justify-center gap-5 text-xs sm:gap-8 sm:text-sm lg:grid-cols-8"
@@ -12,9 +12,10 @@ import technologies from '../constants/technologies';
     {
       technologies.map(({ label, icon }) => {
         return (
-          <li class="flex h-full flex-1 flex-col items-center justify-between gap-2 transition hover:scale-110">
+          <li class="pinwheel flex h-full flex-1 flex-col items-center justify-between gap-2 transition hover:scale-110">
             <img
               class="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16"
+              width="48px"
               src={icon}
               alt={label}
             />

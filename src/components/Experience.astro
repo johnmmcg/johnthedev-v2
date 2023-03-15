@@ -1,0 +1,38 @@
+---
+import companies from '../constants/companies';
+---
+
+<section
+  class="m-auto mt-2 mb-6 flex h-auto max-w-4xl flex-col gap-8 p-2 text-center text-base font-bold text-white sm:text-2xl"
+>
+  <h2>
+    I have 5+ years of software engineering experience.
+    <br />
+    It's been an honor to work for these companies:
+  </h2>
+  <ul class="grid grid-cols-2 gap-y-10 gap-x-4 md:grid-cols-4">
+    {
+      companies.map((item) => (
+        <li class="flex h-auto scale-100 flex-col justify-end transition hover:scale-105">
+          <a
+            class="flex w-full flex-col items-center justify-end gap-2"
+            href={item.url}
+            target="_blank"
+          >
+            <img
+              class="h-auto w-2/3"
+              width="130px"
+              src={item.image_url}
+              alt={`${item.company} Logo`}
+              title={`${item.company} Logo`}
+            />
+            <ul class="font-normal">
+              <li class="text-sm">{item.role}</li>
+              <li class="text-xs">{item.time}</li>
+            </ul>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>

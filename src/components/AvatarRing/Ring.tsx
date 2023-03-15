@@ -1,12 +1,12 @@
 import { useEffect, useRef } from 'react';
 import Thing from './Thing.jsx';
-import codeSvg from '../svg/code.svg';
-import barbellSvg from '../svg/barbells.svg';
-import coffeeSvg from '../svg/coffeeBeans.svg';
-import resumeSvg from '../svg/resume.svg';
-import linkedinSvg from '../svg/linkedin.svg';
+import codeSvg from '../../svg/code.svg';
+import barbellSvg from '../../svg/barbells.svg';
+import coffeeSvg from '../../svg/coffeeBeans.svg';
+import resumeSvg from '../../svg/resume.svg';
+import linkedinSvg from '../../svg/linkedin.svg';
 import './Ring.css';
-import { useWindowSize } from '../hooks.jsx';
+import { useWindowSize } from '../../hooks.jsx';
 
 const things = [
   {

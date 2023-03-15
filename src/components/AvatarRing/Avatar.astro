@@ -472,9 +472,11 @@
 
   const onMouseMove = (evt) => {
     const { x, y } = getEyeXYPositions(evt);
-    eye1.style.transform = `translateY(${y}px) translateX(${x}px)`;
-    eye2.style.transform = `translateY(${y}px) translateX(${x}px)`;
-    root.style.setProperty('--eyebrow-y', `${Math.min(1, y)}px`);
+    const newEyeY = Math.min(6, y);
+    const newBrowY = Math.min(1, y);
+    eye1.style.transform = `translateY(${newEyeY}px) translateX(${x}px)`;
+    eye2.style.transform = `translateY(${newEyeY}px) translateX(${x}px)`;
+    root.style.setProperty('--eyebrow-y', `${newBrowY}px`);
   };
 
   window.addEventListener('mousemove', throttle(onMouseMove, 16));

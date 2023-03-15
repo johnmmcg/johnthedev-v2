@@ -22,7 +22,7 @@ import Reference from './Reference';
     {
       REFS.map((item, idx) => (
         <li
-          class="js-show-on-scroll flex h-full w-full max-w-2xl flex-col justify-center gap-2  sm:w-4/5 sm:gap-3"
+          class="js-show-on-scroll flex h-full w-full max-w-2xl flex-col justify-center gap-2 sm:gap-3"
           data-animate-type="motion-safe:animate-fadeIn"
         >
           <div class="relative mx-[30px] mb-[12px]">
@@ -38,13 +38,13 @@ import Reference from './Reference';
           >
             <img
               class="w-auto rounded-full"
-              style={{ width: '60px' }}
+              width="60px"
               src={item.image_url}
               alt={`LinkedIn Profile Image of ${item.name}`}
             />
-            <p class="flex w-full flex-col text-left font-thin underline group-hover:text-blue-200">
+            <p class="flex w-full flex-col text-left font-normal underline group-hover:text-blue-200">
               {item.name}
-              <span class="text-sm italic">
+              <span class="text-sm">
                 {item.role} at {item.company}
               </span>
             </p>
