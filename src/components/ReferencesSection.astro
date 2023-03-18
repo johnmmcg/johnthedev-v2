@@ -23,7 +23,7 @@ import REFS from '../constants/references';
           class="js-show-on-scroll flex h-full w-full max-w-2xl flex-col justify-center gap-2 sm:gap-3"
           data-animate-type="motion-safe:animate-fadeIn"
         >
-          <div class="relative mx-[30px] mb-[12px]">
+          <div class="relative ml-[40px] mb-[12px] sm:mr-[40px]">
             <p class="text-md rounded-2xl rounded-bl-none bg-blue-900 p-3 text-left font-normal ">
               {item.text}
             </p>
@@ -35,8 +35,8 @@ import REFS from '../constants/references';
             class="group flex w-full flex-row items-center justify-end gap-2 transition"
           >
             <img
-              class="w-auto rounded-full"
-              width="60px"
+              class="w-[80px] rounded-full"
+              width="80px"
               src={item.image_url}
               alt={`LinkedIn Profile Image of ${item.name}`}
             />
