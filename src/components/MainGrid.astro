@@ -1,0 +1,457 @@
+---
+---
+
+<form>
+  <label for="default-input"
+    >Reset
+    <input
+      name="selectors"
+      id="default-input"
+      type="radio"
+      checked
+    />
+  </label>
+  <fieldset name="toggle">
+    <legend>Mode:</legend>
+    <label for="on-click">
+      On Click
+      <input
+        type="radio"
+        name="toggle"
+        id="on-click"
+        checked
+      />
+    </label>
+    <label for="on-click"
+      >On Hover
+
+      <input
+        type="radio"
+        name="toggle"
+        id="on-hover"
+      />
+    </label>
+  </fieldset>
+  <div id="container">
+    <div id="container-ab">
+      <section id="a">
+        <label for="a-input">
+          <input
+            name="selectors"
+            id="a-input"
+            type="radio"
+          />
+        </label>
+      </section>
+      <section id="b">
+        <label for="b-input">
+          <input
+            name="selectors"
+            id="b-input"
+            type="radio"
+          />
+        </label>
+      </section>
+    </div>
+    <div id="container-cdefgh">
+      <div id="container-cd">
+        <section id="c">
+          <label for="c-input">
+            <input
+              name="selectors"
+              id="c-input"
+              type="radio"
+            />
+          </label>
+        </section>
+        <section id="d">
+          <label for="d-input">
+            <input
+              name="selectors"
+              id="d-input"
+              type="radio"
+            />
+          </label>
+        </section>
+      </div>
+      <div id="container-efgh">
+        <div id="container-efg">
+          <div id="container-ef">
+            <section id="e">
+              <label for="e-input">
+                <input
+                  name="selectors"
+                  id="e-input"
+                  type="radio"
+                />
+              </label>
+            </section>
+            <section id="f">
+              <label for="f-input">
+                <input
+                  name="selectors"
+                  id="f-input"
+                  type="radio"
+                />
+              </label>
+            </section>
+          </div>
+          <div id="container-g">
+            <section id="g">
+              <label for="g-input">
+                <input
+                  name="selectors"
+                  id="g-input"
+                  type="radio"
+                />
+              </label>
+            </section>
+          </div>
+        </div>
+        <div id="container-h">
+          <section id="h">
+            <label for="h-input">
+              <input
+                name="selectors"
+                id="h-input"
+                type="radio"
+              />
+            </label>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<style>
+  :root {
+    --a: #ae2012ff;
+    --b: #0a9396ff;
+    --c: #bb3e03ff;
+    --d: #9b2226ff;
+    --e: #ee9b00ff;
+    --f: #ca6702ff;
+    --g: #94d2bdff;
+    --h: #005f73ff;
+    --i: #e9d8a6ff;
+  }
+
+  form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+    width: 100%;
+    color: white;
+    background: black;
+    padding: 1rem;
+  }
+
+  #container {
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    max-height: 940px;
+    aspect-ratio: 16/9;
+    gap: 1rem;
+    transition: 1s ease-in-out;
+  }
+
+  #container > div,
+  #container > div * {
+    transition: flex 1s ease-in-out, filter 1s ease;
+  }
+
+  section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border: 2px solid white;
+    border-radius: 12px;
+    color: white;
+    font-size: 2rem;
+    filter: brightness(0.5);
+  }
+
+  html:has(#on-click:checked):has(#default-input:checked) section {
+    filter: brightness(1);
+  }
+
+  section > label {
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  html:has(#on-click:checked) section:has(input:checked),
+  html:has(#on-hover:checked) section:hover {
+    filter: brightness(1);
+  }
+
+  section > label > input {
+    display: none;
+  }
+
+  #container section > div {
+    display: flex;
+    place-content: center;
+    align-items: center;
+  }
+
+  #container-ab {
+    gap: 1rem;
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #container-cdefgh {
+    flex: 3 3 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  #container-cd {
+    flex: 1 1 0;
+    display: flex;
+    gap: 1rem;
+  }
+
+  #container-efgh {
+    flex: 3 3 0;
+    display: flex;
+    gap: 1rem;
+  }
+
+  #container-efg {
+    flex: 8 8 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  #container-ef {
+    display: flex;
+    flex: 7 7 0;
+    gap: 1rem;
+  }
+
+  #container-g {
+    display: flex;
+    flex: 3 3 0;
+  }
+
+  #container-h {
+    flex: 2 2 0;
+  }
+
+  container-ef {
+    display: flex;
+  }
+
+  section#a {
+    flex: 6 6 0;
+    background: var(--a);
+    padding: 1rem;
+    transition: 1s ease;
+  }
+
+  section#a > div {
+    background: red;
+    border-radius: 12px;
+    width: 100%;
+    height: 100%;
+    transition: 1s ease;
+  }
+
+  html:has(#on-click:checked):has(#a-input:checked) #container-ab,
+  html:has(#on-click:checked):has(#a-input:checked) section#a,
+  html:has(#on-hover:checked):has(section#a:hover) #container-ab,
+  html:has(#on-hover:checked):has(section#a:hover) section#a {
+    flex: 9 9 0;
+  }
+  html:has(#on-click:checked):has(#a-input:checked) #container-cdefgh,
+  html:has(#on-click:checked):has(#a-input:checked) section#b,
+  html:has(#on-hover:checked):has(section#a:hover) #container-cdefgh,
+  html:has(#on-hover:checked):has(section#a:hover) section#b {
+    flex: 1 1 0;
+  }
+
+  section#b {
+    background: var(--b);
+    flex: 4 4 0;
+  }
+
+  html:has(#on-click:checked):has(#b-input:checked) #container-ab,
+  html:has(#on-click:checked):has(#b-input:checked) section#b,
+  html:has(#on-hover:checked):has(section#b:hover) #container-ab,
+  html:has(#on-hover:checked):has(section#b:hover) section#b {
+    flex: 9 9 0;
+  }
+  html:has(#on-click:checked):has(#b-input:checked) #container-cdefgh,
+  html:has(#on-click:checked):has(#b-input:checked) section#a,
+  html:has(#on-hover:checked):has(section#b:hover) #container-cdefgh,
+  html:has(#on-hover:checked):has(section#b:hover) section#a {
+    flex: 1 1 0;
+  }
+
+  section#c {
+    background: var(--c);
+    flex: 2 2 0;
+  }
+
+  html:has(#on-click:checked):has(#c-input:checked) #container-ab,
+  html:has(#on-click:checked):has(#c-input:checked) #container-efgh,
+  html:has(#on-click:checked):has(#c-input:checked) section#d,
+  html:has(#on-hover:checked):has(section#c:hover) #container-ab,
+  html:has(#on-hover:checked):has(section#c:hover) #container-efgh,
+  html:has(#on-hover:checked):has(section#c:hover) section#d {
+    flex: 1 1 0;
+  }
+
+  html:has(#on-click:checked):has(#c-input:checked) #container-cdefgh,
+  html:has(#on-click:checked):has(#c-input:checked) #container-cd,
+  html:has(#on-click:checked):has(#c-input:checked) section#c,
+  html:has(#on-hover:checked):has(section#c:hover) #container-cdefgh,
+  html:has(#on-hover:checked):has(section#c:hover) #container-cd,
+  html:has(#on-hover:checked):has(section#c:hover) section#c {
+    flex: 9 9 0;
+  }
+
+  section#d {
+    background: var(--d);
+    flex: 6 6 0;
+  }
+
+  html:has(#on-click:checked):has(#d-input:checked) #container-ab,
+  html:has(#on-click:checked):has(#d-input:checked) #container-efgh,
+  html:has(#on-click:checked):has(#d-input:checked) section#c,
+  html:has(#on-hover:checked):has(section#d:hover) #container-ab,
+  html:has(#on-hover:checked):has(section#d:hover) #container-efgh,
+  html:has(#on-hover:checked):has(section#d:hover) section#c {
+    flex: 1 1 0;
+  }
+  html:has(#on-click:checked):has(#d-input:checked) #container-cdefgh,
+  html:has(#on-click:checked):has(#d-input:checked) #container-cd,
+  html:has(#on-click:checked):has(#d-input:checked) section#d,
+  html:has(#on-hover:checked):has(section#d:hover) #container-cdefgh,
+  html:has(#on-hover:checked):has(section#d:hover) #container-cd,
+  html:has(#on-hover:checked):has(section#d:hover) section#d {
+    flex: 9 9 0;
+  }
+
+  section#e {
+    background: var(--e);
+    flex: 3 3 0;
+  }
+
+  html:has(#on-click:checked):has(#e-input:checked) #container-ab,
+  html:has(#on-click:checked):has(#e-input:checked) #container-cd,
+  html:has(#on-click:checked):has(#e-input:checked) #container-h,
+  html:has(#on-click:checked):has(#e-input:checked) #container-g,
+  html:has(#on-click:checked):has(#e-input:checked) section#f,
+  html:has(#on-hover:checked):has(section#e:hover) #container-ab,
+  html:has(#on-hover:checked):has(section#e:hover) #container-cd,
+  html:has(#on-hover:checked):has(section#e:hover) #container-h,
+  html:has(#on-hover:checked):has(section#e:hover) #container-g,
+  html:has(#on-hover:checked):has(section#e:hover) section#f {
+    flex: 1 1 0;
+  }
+  html:has(#on-click:checked):has(#e-input:checked) #container-cdefgh,
+  html:has(#on-click:checked):has(#e-input:checked) #container-efgh,
+  html:has(#on-click:checked):has(#e-input:checked) #container-efg,
+  html:has(#on-click:checked):has(#e-input:checked) #container-ef,
+  html:has(#on-click:checked):has(#e-input:checked) section#e,
+  html:has(#on-hover:checked):has(section#e:hover) #container-cdefgh,
+  html:has(#on-hover:checked):has(section#e:hover) #container-efgh,
+  html:has(#on-hover:checked):has(section#e:hover) #container-efg,
+  html:has(#on-hover:checked):has(section#e:hover) #container-ef,
+  html:has(#on-hover:checked):has(section#e:hover) section#e {
+    flex: 9 9 0;
+  }
+
+  section#f {
+    background: var(--f);
+    flex: 2 2 0;
+  }
+
+  html:has(#on-click:checked):has(#f-input:checked) #container-ab,
+  html:has(#on-click:checked):has(#f-input:checked) #container-cd,
+  html:has(#on-click:checked):has(#f-input:checked) #container-h,
+  html:has(#on-click:checked):has(#f-input:checked) #container-g,
+  html:has(#on-click:checked):has(#f-input:checked) section#e,
+  html:has(#on-hover:checked):has(section#f:hover) #container-ab,
+  html:has(#on-hover:checked):has(section#f:hover) #container-cd,
+  html:has(#on-hover:checked):has(section#f:hover) #container-h,
+  html:has(#on-hover:checked):has(section#f:hover) #container-g,
+  html:has(#on-hover:checked):has(section#f:hover) section#e {
+    flex: 1 1 0;
+  }
+  html:has(#on-click:checked):has(#f-input:checked) #container-cdefgh,
+  html:has(#on-click:checked):has(#f-input:checked) #container-efgh,
+  html:has(#on-click:checked):has(#f-input:checked) #container-efg,
+  html:has(#on-click:checked):has(#f-input:checked) #container-ef,
+  html:has(#on-click:checked):has(#f-input:checked) section#f,
+  html:has(#on-hover:checked):has(section#f:hover) #container-cdefgh,
+  html:has(#on-hover:checked):has(section#f:hover) #container-efgh,
+  html:has(#on-hover:checked):has(section#f:hover) #container-efg,
+  html:has(#on-hover:checked):has(section#f:hover) #container-ef,
+  html:has(#on-hover:checked):has(section#f:hover) section#f {
+    flex: 9 9 0;
+  }
+
+  section#g {
+    background: var(--g);
+    flex: 1 1 0;
+  }
+
+  html:has(#on-click:checked):has(#g-input:checked) #container-ab,
+  html:has(#on-click:checked):has(#g-input:checked) #container-cd,
+  html:has(#on-click:checked):has(#g-input:checked) #container-h,
+  html:has(#on-click:checked):has(#g-input:checked) #container-ef,
+  html:has(#on-hover:checked):has(section#g:hover) #container-ab,
+  html:has(#on-hover:checked):has(section#g:hover) #container-cd,
+  html:has(#on-hover:checked):has(section#g:hover) #container-h,
+  html:has(#on-hover:checked):has(section#g:hover) #container-ef {
+    flex: 1 1 0;
+  }
+  html:has(#on-click:checked):has(#g-input:checked) #container-cdefgh,
+  html:has(#on-click:checked):has(#g-input:checked) #container-efgh,
+  html:has(#on-click:checked):has(#g-input:checked) #container-efg,
+  html:has(#on-click:checked):has(#g-input:checked) #container-g,
+  html:has(#on-hover:checked):has(section#g:hover) #container-cdefgh,
+  html:has(#on-hover:checked):has(section#g:hover) #container-efgh,
+  html:has(#on-hover:checked):has(section#g:hover) #container-efg,
+  html:has(#on-hover:checked):has(section#g:hover) #container-g {
+    flex: 9 9 0;
+  }
+
+  section#h {
+    background: var(--h);
+    flex: 1 1 0;
+    height: 100%;
+  }
+
+  html:has(#on-click:checked):has(#h-input:checked) #container-ab,
+  html:has(#on-click:checked):has(#h-input:checked) #container-cd,
+  html:has(#on-click:checked):has(#h-input:checked) #container-efg,
+  html:has(#on-hover:checked):has(section#h:hover) #container-ab,
+  html:has(#on-hover:checked):has(section#h:hover) #container-cd,
+  html:has(#on-hover:checked):has(section#h:hover) #container-efg {
+    flex: 1 1 0;
+  }
+  html:has(#on-click:checked):has(#h-input:checked) #container-cdefgh,
+  html:has(#on-click:checked):has(#h-input:checked) #container-efgh,
+  html:has(#on-click:checked):has(#h-input:checked) #container-h,
+  html:has(#on-hover:checked):has(section#h:hover) #container-cdefgh,
+  html:has(#on-hover:checked):has(section#h:hover) #container-efgh,
+  html:has(#on-hover:checked):has(section#h:hover) #container-h {
+    flex: 9 9 0;
+  }
+</style>
