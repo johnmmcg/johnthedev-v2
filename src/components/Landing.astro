@@ -3,7 +3,6 @@ import '../input.css';
 import TextBlock from './TextBlock.astro';
 import Greeting from './Greeting.astro';
 import ReferencesSection from './ReferencesSection.astro';
-import Footer from './Footer.astro';
 import TechList from './TechList.astro';
 import Header from './Header.astro';
 import ScrollProgress from './ScrollProgress.astro';
@@ -24,6 +23,14 @@ import AvatarRing from './AvatarRing/index.astro';
     <TechList />
     <Experience />
     <ReferencesSection />
+    <div class="flex items-center justify-center p-6">
+      <a href="/principles">
+        <h2
+          class="inline-bock w-fit self-center bg-white p-4 py-2 text-2xl font-bold text-slate-700 shadow transition hover:underline sm:text-3xl"
+        >
+          My Guiding Principles
+        </h2>
+      </a>
+    </div>
   </main>
-  <Footer />
 </div>
