@@ -1,16 +1,16 @@
 :root {
-  --thing-size: 70px;
+  --ring-link-size: 70px;
 }
 
-.thing {
+.ring-link {
   display: flex;
-  width: var(--thing-size);
-  height: var(--thing-size);
+  width: var(--ring-link-size);
+  height: var(--ring-link-size);
   border-radius: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin: calc(-1 * var(--thing-size) / 2);
+  margin: calc(-1 * var(--ring-link-size) / 2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,43 +20,43 @@
     transform 1750ms cubic-bezier(0.1, 0, 0.24, 1);
 }
 
-.thing:hover {
+.ring-link:hover {
   scale: 1.05;
   box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.8);
 }
 
-.thing > img {
+.ring-link > img {
   width: 100%;
   height: auto;
   transition: all 0.25s ease-in-out;
 }
 
-.thing > h3 {
+.ring-link > h3 {
   position: absolute;
   opacity: 0;
   scale: 0.25;
-  translate: 0px calc(var(--thing-size) / 2);
+  translate: 0px calc(var(--ring-link-size) / 2);
   text-shadow: 0px 0px 0px rgb(0, 0, 0, 0.8);
   transition: 0.2s ease;
 }
 
-.thing:hover > h3 {
+.ring-link:hover > h3 {
   opacity: 1;
   scale: 1;
-  translate: 0px calc(var(--thing-size) / 2 + 10px);
+  translate: 0px calc(var(--ring-link-size) / 2 + 10px);
   text-shadow: 0px 0px 10px rgb(0, 0, 0, 0.8);
   transition: 0.2s ease;
 }
 
 @media (min-width: 768px) {
   :root {
-    --thing-size: 90px;
+    --ring-link-size: 90px;
   }
 
-  .thing:hover > h3 {
+  .ring-link:hover > h3 {
     opacity: 1;
     scale: 1;
-    translate: 0px calc(var(--thing-size) / 2 + 16px);
+    translate: 0px calc(var(--ring-link-size) / 2 + 16px);
     transition: 0.2s ease;
   }
 }

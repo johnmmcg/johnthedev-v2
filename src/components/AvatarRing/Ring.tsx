@@ -1,14 +1,14 @@
-import { useEffect, useRef } from 'react';
-import Thing from './Thing.jsx';
+import React, { useEffect, useRef } from 'react';
+import RingLink from './RingLink.tsx';
 import codeSvg from '../../svg/code.svg';
 import barbellSvg from '../../svg/barbells.svg';
 import coffeeSvg from '../../svg/coffeeBeans.svg';
 import resumeSvg from '../../svg/resume.svg';
 import linkedinSvg from '../../svg/linkedin.svg';
 import './Ring.css';
-import { useWindowSize } from '../../hooks.jsx';
+import { useWindowSize } from '../../hooks.tsx';
 
-const things = [
+const links = [
   {
     id: 'coding',
     label: 'GitHub',
@@ -58,14 +58,14 @@ export default function Ring() {
 
   useEffect(() => {
     const ringGraph = ringRef.current;
-    const things = ringGraph.childNodes;
+    const links = ringGraph.childNodes;
     let angle = 360 - 90;
-    let dangle = 360 / things.length;
+    let dangle = 360 / links.length;
     let translateSize = isSmallScreen
       ? ringGraph.clientWidth / 2 - 30
       : ringGraph.clientWidth / 2 + 20;
-    for (let i = 0; i < things.length; i++) {
-      let circle = things[i];
+    for (let i = 0; i < links.length; i++) {
+      let circle = links[i];
       angle += dangle;
       circle.style.transform = `rotate(${angle}deg) translate(${translateSize}px) rotate(-${angle}deg)`;
     }
@@ -76,8 +76,8 @@ export default function Ring() {
       id="ringContainer"
       ref={ringRef}
     >
-      {things.map((data) => (
-        <Thing
+      {links.map((data) => (
+        <RingLink
           data={data}
           key={data.id}
         />
