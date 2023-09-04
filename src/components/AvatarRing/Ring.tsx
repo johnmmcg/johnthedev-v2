@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import RingLink from './RingLink.tsx';
 import codeSvg from '../../svg/code.svg';
-import barbellSvg from '../../svg/barbells.svg';
-import coffeeSvg from '../../svg/coffeeBeans.svg';
+import codepenSvg from '../../svg/codepen.svg';
+import instagramSvg from '../../svg/instagram.svg';
 import resumeSvg from '../../svg/resume.svg';
 import linkedinSvg from '../../svg/linkedin.svg';
 import './Ring.css';
@@ -10,28 +10,25 @@ import { useWindowSize } from '../../hooks.tsx';
 
 const links = [
   {
-    id: 'coding',
+    id: 'github',
     label: 'GitHub',
     icon: codeSvg,
     color: '#636e72',
     url: 'https://github.com/johnmmcg',
-    title: 'Coding Icon by Syahbani Gondrong',
   },
   {
-    id: 'lifting',
-    label: 'Powerlifting',
-    icon: barbellSvg,
+    id: 'codepen',
+    label: 'CodePen',
+    icon: codepenSvg,
     color: '#6c5ce7',
-    url: 'https://www.instagram.com/light_roast.heavy_lifts/',
-    title: 'Barbells Icon by Elizabeth Fuqua',
+    url: 'https://codepen.io/johnmmcg',
   },
   {
-    id: 'coffee',
-    label: 'Coffee',
-    icon: coffeeSvg,
+    id: 'instagram',
+    label: 'Instagram',
+    icon: instagramSvg,
     color: '#d63031',
     url: 'https://www.instagram.com/light_roast.heavy_lifts/',
-    title: 'Coffee Icon by ghufronagustian',
   },
   {
     id: 'linkedin',
@@ -39,7 +36,6 @@ const links = [
     icon: linkedinSvg,
     color: '#a29bfe',
     url: 'https://www.linkedin.com/in/johnmmcg/',
-    title: 'Network Icon by Yoon Ro',
   },
   {
     id: 'resume',

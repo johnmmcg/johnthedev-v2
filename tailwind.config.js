@@ -15,9 +15,9 @@ module.exports = {
       },
       keyframes: {
         wiggle: {
+          '0%, 100%': { transform: 'rotate(0deg)'},
           '20%, 60%': { transform: 'rotate(-15deg)' },
-          '40%, 80%': { transform: 'rotate(15deg)' },
-          '0%, 100%': { transform: 'rotate(0deg)'}
+          '40%, 80%': { transform: 'rotate(15deg)' }
         },
         fadeIn: {
           "0%": { opacity: 0 },

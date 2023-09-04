@@ -2,17 +2,18 @@ import React, { useEffect, useRef, useState } from 'react';
 import './Ticker.css';
 
 const SPECIALTIES = [
-  'building User Interfaces 💻',
+  'building user interfaces 💻',
   'React ⚛',
   'TypeScript & JavaScript',
   "implementing API's",
-  'CSS/Sass & Web-Animations',
-  'GraphQL',
-  'Global State Management',
+  'CSS flexbox & grid',
+  'CSS animations 🎨',
+  'global state management 🌐',
+  'writing documentation 📝',
   'implementing designs',
-  'Code Review',
-  'Scrum Leadership',
-  'Cross-Team Communication',
+  'code review 🕵🏼‍♂️',
+  'scrum leadership',
+  'cross-team communication 🗣️',
   'getting the job done 😎',
 ];
 
