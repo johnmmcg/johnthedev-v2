@@ -1,99 +1,84 @@
 ---
-import Layout from '../components/Layout.astro';
-import StickyLogo from '../components/StickyLogo.astro';
-import Greeting from '../components/Greeting.astro';
-import Header from '../components/Header.astro';
-import ScrollProgress from '../components/ScrollProgress.astro';
-import Footer from '../components/Footer.astro';
-import '../input.css';
+import Layout from "../components/Layout.astro";
+import Greeting from "../components/Greeting.astro";
+import "../input.css";
 ---
 
 <Layout title="John the Dev">
-  <StickyLogo />
-  <div
-    id="main-container"
-    class="relative flex h-full min-h-screen w-full flex-col items-center overflow-x-hidden bg-gradient-to-b from-slate-900 to-slate-800 text-center duration-100"
-  >
-    <ScrollProgress />
-    <Header />
-    <main class="fade-in flex max-w-2xl flex-col gap-8 p-6">
-      <Greeting />
-      <h2
-        class="inline-bock w-fit self-center bg-white p-4 py-2 text-2xl font-bold text-slate-700 shadow sm:text-3xl"
+  <main class="fade-in flex max-w-2xl flex-col gap-8 p-6">
+    <Greeting />
+    <h2
+      class="inline-bock w-fit self-center bg-white p-4 py-2 text-2xl font-bold text-slate-700 shadow sm:text-3xl"
+    >
+      My Guiding Principles
+    </h2>
+    <section class="flex h-full w-full flex-col items-center gap-6">
+      <ul
+        class="flex w-full flex-col gap-0 text-left text-base text-white sm:text-lg"
       >
-        My Guiding Principles
-      </h2>
-      <section class="flex h-full w-full flex-col items-center gap-6">
-        <ul
-          class="flex w-full flex-col gap-0 text-left text-base text-white sm:text-lg"
-        >
-          {
-            [
-              {
-                title: 'Honesty',
-                description: [
-                  'I value facts and the truth.',
-                  'I oppose lying and keeping secrets.',
-                ],
-              },
-              {
-                title: 'Ownership',
-                description: [
-                  'I value taking responsibility and fully understanding & apologizing for any short-comings.',
-                  'I oppose finger-pointing and blame-shifting.',
-                ],
-              },
-              {
-                title: 'Mindfulness',
-                description: [
-                  'I value treating everyone with respect, care, and understanding.',
-                  'I oppose any form of slander and belittlement.',
-                ],
-              },
-              {
-                title: 'Eagerness',
-                description: [
-                  'I value moving forward with willingness to grow, learn, and change behavior for the better.',
-                  'I oppose complacency and unrepentance.',
-                ],
-              },
-            ].map(({ title, description }) => (
-              <li>
-                <h3 class="flex items-center gap-1 text-2xl tracking-widest sm:text-3xl">
-                  <span class="flex aspect-square w-16 items-center justify-center bg-white p-4 text-4xl font-bold tracking-normal text-slate-700">
-                    {title[0]}
-                  </span>
-                  {title.slice(1)}
-                </h3>
-                <div class="ml-8 border-l-2 border-l-white p-4 pl-6">
-                  {description.map((paragraph) => (
-                    <p>{paragraph}</p>
-                  ))}
-                </div>
-              </li>
-            ))
-          }
-          <li
-            class="flex flex-col items-center gap-4 border-2 border-white p-6"
+        {
+          [
+            {
+              title: "Honesty",
+              description: [
+                "I value facts and the truth.",
+                "I oppose lying and keeping secrets.",
+              ],
+            },
+            {
+              title: "Ownership",
+              description: [
+                "I value taking responsibility and fully understanding & apologizing for any short-comings.",
+                "I oppose finger-pointing and blame-shifting.",
+              ],
+            },
+            {
+              title: "Mindfulness",
+              description: [
+                "I value treating everyone with respect, care, and understanding.",
+                "I oppose any form of slander and belittlement.",
+              ],
+            },
+            {
+              title: "Eagerness",
+              description: [
+                "I value moving forward with willingness to grow, learn, and change behavior for the better.",
+                "I oppose complacency and unrepentance.",
+              ],
+            },
+          ].map(({ title, description }) => (
+            <li>
+              <h3 class="flex items-center gap-1 text-2xl tracking-widest sm:text-3xl">
+                <span class="flex aspect-square w-16 items-center justify-center bg-white p-4 text-4xl font-bold tracking-normal text-slate-700">
+                  {title[0]}
+                </span>
+                {title.slice(1)}
+              </h3>
+              <div class="ml-8 border-l-2 border-l-white p-4 pl-6">
+                {description.map((paragraph) => (
+                  <p>{paragraph}</p>
+                ))}
+              </div>
+            </li>
+          ))
+        }
+        <li class="flex flex-col items-center gap-4 border-2 border-white p-6">
+          <ul class="flex flex-row items-center justify-center gap-2">
+            {
+              ["H", "O", "M", "E"].map((letter) => (
+                <li class="flex aspect-square w-16 items-center justify-center bg-white p-4 text-4xl font-bold tracking-normal text-slate-700">
+                  {letter}
+                </li>
+              ))
+            }
+          </ul>
+          <p
+            class="text-center text-base font-extrabold tracking-widest text-white sm:text-lg"
           >
-            <ul class="flex flex-row items-center justify-center gap-2">
-              {
-                ['H', 'O', 'M', 'E'].map((letter) => (
-                  <li class="flex aspect-square w-16 items-center justify-center bg-white p-4 text-4xl font-bold tracking-normal text-slate-700">
-                    {letter}
-                  </li>
-                ))
-              }
-            </ul>
-            <p
-              class="text-center text-base font-extrabold tracking-widest text-white sm:text-lg"
-            >
-              Honesty - Ownership - Mindfulness - Eagerness
-            </p>
-          </li>
-        </ul>
-      </section>
-    </main>
-  </div>
-  <Footer />
+            Honesty - Ownership - Mindfulness - Eagerness
+          </p>
+        </li>
+      </ul>
+    </section>
+  </main>
 </Layout>

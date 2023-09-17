@@ -1,0 +1,17 @@
+---
+import Layout from "../../components/Layout.astro";
+import CoffeeListItem from "../../components/coffee/CoffeeListItem.astro";
+
+import coffees from "../../constants/coffees.json";
+---
+
+<Layout title="John the Dev">
+  <main class="flex w-full flex-col items-center gap-6 p-4">
+    <h1 class="text-2xl">Coffees</h1>
+    <ul
+      class="flex w-full max-w-4xl flex-row flex-wrap items-center justify-center"
+    >
+      {coffees.map((coffee) => <CoffeeListItem coffee={coffee} />)}
+    </ul>
+  </main>
+</Layout>

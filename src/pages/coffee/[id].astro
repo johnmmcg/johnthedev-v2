@@ -1,0 +1,68 @@
+---
+import { parse } from "path";
+import Layout from "../../components/Layout.astro";
+import coffees from "../../constants/coffees.json";
+
+export type Coffee = {
+  id: number;
+  country: string;
+  name: string;
+  notes: string[];
+  process: string;
+  producer: string;
+  region: string;
+  roaster: {
+    location: string;
+    name: string;
+    url: string;
+  };
+  variety: string;
+  harvest_year: string;
+  elevation?: string;
+};
+
+export function getStaticPaths() {
+  return coffees.map((coffee) => {
+    return {
+      params: {
+        id: coffee.id,
+      },
+    };
+  });
+}
+
+const { id } = Astro.params;
+
+const coffee = coffees[parseInt(id!, 10) - 1];
+
+const { name, producer, region, country, roaster } = coffee;
+
+const mainHeader = name || `${producer}, ${region}`;
+
+export const prerender = true;
+---
+
+<Layout title="John the Dev">
+  <main
+    class="relative flex h-full w-full max-w-3xl flex-col items-center justify-center gap-4 p-4"
+  >
+    <a
+      href="/coffee"
+      class="self-center p-2 text-lg transition-all hover:underline sm:self-start"
+    >
+      &larr; all coffee
+    </a>
+    <section class="flex w-full flex-col items-start gap-4 bg-slate-700 p-4">
+      <div class="flex w-full flex-wrap items-center justify-between gap-4">
+        <h1 class="text-4xl font-bold">{mainHeader}</h1>
+        <h2 class="text-2xl">{region}, {country}</h2>
+      </div>
+      <p class="text-lg">Produced by {producer}</p>
+      <p class="text-lg">
+        Roasted by <a href={roaster.url}>
+          {roaster}
+        </a> | {roaster.location}
+      </p>
+    </section>
+  </main>
+</Layout>

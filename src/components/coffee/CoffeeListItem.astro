@@ -1,0 +1,21 @@
+---
+import type { Coffee } from "../../pages/coffee/[id].astro";
+const { coffee } = Astro.props;
+
+const { id, name, producer, region, country } = coffee as Coffee;
+
+const mainHeader = name || producer;
+---
+
+<li class="flex w-4/5 flex-col items-center rounded p-2 md:w-1/2">
+  <a href={`/coffee/${id}`} class="h-full w-full bg-slate-700 p-4">
+    <div class="flex items-center justify-between whitespace-nowrap">
+      <h2 class="text-xl font-bold">
+        {mainHeader}
+      </h2>
+      <h3 class="text-base">
+        {country}
+      </h3>
+    </div>
+  </a>
+</li>

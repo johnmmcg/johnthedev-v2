@@ -4,33 +4,23 @@ import TextBlock from './TextBlock.astro';
 import Greeting from './Greeting.astro';
 import ReferencesSection from './ReferencesSection.astro';
 import TechList from './TechList.astro';
-import Header from './Header.astro';
-import ScrollProgress from './ScrollProgress.astro';
 import Experience from './Experience.astro';
 import AvatarRing from './AvatarRing/index.astro';
 ---
 
-<div
-  id="main-container"
-  class="relative flex h-auto w-full flex-col overflow-x-hidden bg-gradient-to-b from-slate-900 to-slate-800 text-center"
->
-  <ScrollProgress />
-  <Header />
-  <main class="flex flex-col gap-4">
-    <Greeting />
-    <AvatarRing />
-    <TextBlock />
-    <TechList />
-    <Experience />
-    <ReferencesSection />
-    <div class="flex items-center justify-center p-6">
-      <a href="/principles">
-        <h2
-          class="inline-bock w-fit self-center bg-white p-4 py-2 text-2xl font-bold text-slate-700 shadow transition hover:underline sm:text-3xl"
-        >
-          My Guiding Principles
-        </h2>
-      </a>
-    </div>
-  </main>
-</div>
+<main class="flex flex-col gap-4">
+  <Greeting />
+  <AvatarRing />
+  <TextBlock />
+  <TechList />
+  <Experience />
+  <ReferencesSection />
+  <div class="flex items-center justify-center p-6">
+    <a
+      href="/principles"
+      class="inline-bock w-fit self-center bg-white p-4 py-2 text-2xl font-bold text-slate-700 shadow transition hover:underline sm:text-3xl"
+    >
+      My Guiding Principles
+    </a>
+  </div>
+</main>
