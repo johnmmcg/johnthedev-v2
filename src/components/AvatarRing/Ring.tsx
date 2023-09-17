@@ -42,28 +42,31 @@ const links = [
     label: 'Resume',
     icon: resumeSvg,
     color: '#00b894',
-    url: '/John_McGuinness_Resume_2023.pdf',
+    url: '/John_McGuinness_Resume.pdf',
     title: 'Resume Icon by Adrien Coquet',
   },
 ];
 
 // thanks and credit to br3ntor for this React equally distributed ring list (https://stackoverflow.com/a/62466233)
 export default function Ring() {
-  const ringRef = useRef(null);
+  const ringRef = useRef<HTMLDivElement | null>(null);
   const { isSmallScreen } = useWindowSize();
 
   useEffect(() => {
     const ringGraph = ringRef.current;
-    const links = ringGraph.childNodes;
-    let angle = 360 - 90;
-    let dangle = 360 / links.length;
-    let translateSize = isSmallScreen
-      ? ringGraph.clientWidth / 2 - 30
+    if (ringGraph) {
+      const links = ringGraph.childNodes;
+      let angle = 360 - 90;
+      let dangle = 360 / links.length;
+      let translateSize = isSmallScreen
+      ? ringGraph.clientWidth / 2 - 20
       : ringGraph.clientWidth / 2 + 20;
-    for (let i = 0; i < links.length; i++) {
-      let circle = links[i];
-      angle += dangle;
-      circle.style.transform = `rotate(${angle}deg) translate(${translateSize}px) rotate(-${angle}deg)`;
+      for (let i = 0; i < links.length; i++) {
+        if (!links[i]) continue;
+        let circle = links[i] as HTMLElement;
+        angle += dangle;
+        circle.style.transform = `rotate(${angle}deg) translate(${translateSize}px) rotate(-${angle}deg)`;
+      }
     }
   }, [isSmallScreen]);
 

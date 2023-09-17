@@ -20,7 +20,7 @@ import {
 export default [
   {
     label: 'TypeScript',
-    icon: 'TypeScriptIcon',
+    icon: TypeScriptIcon,
   },
   {
     label: 'JavaScript',
