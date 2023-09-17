@@ -26,6 +26,6 @@
   },
   "dependencies": {
     "@astrojs/netlify": "^3.0.1",
-    "@astrojs/tailwind": "^5.0.0",
+    "@astrojs/tailwind": "^5.0.0"
   }
 }
