@@ -1,0 +1,19 @@
+[
+  {
+    "country": "Colombia",
+    "producer": "Café de Colombia",
+    "name": "Supremo",
+    "harvest_year": "2018",
+    "variety": "Caturra",
+    "roaster": {
+      "name": "Persimmon Coffee",
+      "location": "Philadelphia, PA"
+    },
+    "roast": "Medium Light",
+    "notes": [
+      "Caramel",
+      "Chocolate",
+      "Orange"
+    ]
+  }
+]
