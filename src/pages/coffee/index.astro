@@ -19,15 +19,24 @@ import coffees from "../../constants/coffees.json";
       </div>
       <h1 class="text-2xl" transition:name="coffees-header">Coffee</h1>
     </div>
-    <h3 class="max-w-xl text-justify text-lg">
-      In 2014, I took my first sip of a classic blueberry forward washed
-      Ethiopian pourover. I've been hooked ever since! You can check out what
-      I'm currently brewing on instagram @<a
-        href="https://www.instagram.com/light_roast.heavy_lifts/"
-        target="_blank"
-        class="underline">light_roast.heavy_lifts</a
-      >. Here's a curated list of my favorite coffees that I've ever tasted.
-    </h3>
+    <div class="flex max-w-2xl flex-col gap-4">
+      <p class="text-lg">
+        In 2014, I took my first sip of a pourover coffee from Ethiopia. My mind
+        was blown as I tasted sweet and clear notes of blueberries and lavender.
+
+        <br />I've been hooked ever since!
+      </p>
+      <p class="text-lg">
+        You can check out what I'm currently brewing @<a
+          href="https://www.instagram.com/light_roast.heavy_lifts/"
+          target="_blank"
+          class="underline">light_roast.heavy_lifts</a
+        >.
+      </p>
+      <p class="text-lg">
+        Here's a curated list of my favorite coffees I've ever tasted:
+      </p>
+    </div>
     <ul class="flex w-full flex-row flex-wrap items-center justify-center">
       {coffees.map((coffee) => <CoffeeListItem coffee={coffee} />)}
     </ul>

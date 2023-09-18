@@ -1,0 +1,30 @@
+---
+import Layout from "./Layout.astro";
+const { frontmatter } = Astro.props;
+const { title, description, author, date } = frontmatter;
+---
+
+<Layout title="John the Dev Blog">
+  <article
+    class="prose prose-stone prose-invert flex w-full flex-col text-left text-slate-50"
+  >
+    <header class="flex flex-col gap-2">
+      <h1 class="m-0" transition:name="blog-title">{title}</h1>
+      <h2 class="m-0 text-slate-300" transition:name="blog-description">
+        {description}
+      </h2>
+      <div class="flex flex-row justify-between">
+        <p class="m-0 text-slate-300">{author}</p>
+        <p class="m-0 text-slate-300" transition:name="blog-date">{date}</p>
+      </div>
+      <hr class="my-1" />
+    </header>
+    <!-- Markdown content is injected in slot -->
+    <slot />
+  </article>
+  <div class="flex gap-1 self-center p-4" transition:name="blog-posts-header">
+    <p>&larr;</p>
+    <a href={`/blog`} class="hover:underline"> Blog Posts</a>
+     👨🏼‍💻
+  </div>
+</Layout>

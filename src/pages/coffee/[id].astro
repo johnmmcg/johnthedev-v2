@@ -59,11 +59,12 @@ export const prerender = true;
   <main
     class="relative flex h-full w-full max-w-4xl flex-col items-center justify-center gap-4 p-4"
   >
-    <a
-      href={`/coffee#${id}`}
-      class="flex flex-row items-center justify-center gap-1 self-center p-2 text-lg transition-all hover:underline sm:self-start"
+    <div
+      transition:name="coffees-header"
+      class="flex flex-row items-center justify-center gap-1 self-center p-2 text-lg sm:self-start"
     >
-      <span transition:name="coffees-header"> &larr; Coffee</span>
+      <p>&larr;</p>
+      <a href={`/coffee#${id}`} class="hover:underline"> Coffee</a>
       <div
         class="flex h-6 w-6 rounded-full bg-[#d63031]"
         transition:name="coffees-icon"
@@ -73,7 +74,7 @@ export const prerender = true;
           class="m-auto h-full w-full place-self-center"
         />
       </div>
-    </a>
+    </div>
     <section
       class="flex w-full flex-col items-start justify-start gap-4 rounded-xl bg-slate-700 p-4 text-left"
       transition:name={`coffee-container-${id}`}

@@ -1,12 +1,19 @@
 {
   "extends": "./node_modules/astro/tsconfigs/strict.json",
   "compilerOptions": {
+    "baseUrl": "./",
+    "allowJs": true,
+    "strictNullChecks": true,
     "jsx": "react",
     "types": ["bun-types"],
     "plugins": [
       {
         "name": "@astrojs/ts-plugin"
       }
-    ]
+    ],
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@assets/*": ["src/assets/*"]
+    }
   }
 }
