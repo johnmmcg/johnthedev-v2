@@ -2,7 +2,8 @@
   {
     "id": 1,
     "country": "Burundi",
-    "name": "Heza",
+    "flag_emoji": "🇧🇮",
+    "name": "Heza Caturra",
     "notes": [
       "Raspberry",
       "Apricot",
@@ -22,16 +23,17 @@
   {
     "id": 2,
     "country": "Ethiopia",
+    "flag_emoji": "🇪🇹",
     "elevation": "2,000 - 2,200",
-    "name": "Alaka, Okologisk",
+    "name": "Alaka Okologisk",
     "notes": [
       "Peach",
-      "Organge",
+      "Orange",
       "Bergamot",
       "Creamy"
     ],
     "process": "Washed",
-    "producer": "Alaka",
+    "producer": "Metad Agricultural Development",
     "region": "Benti Nenqu, Guji",
     "roaster": {
       "location": "Copenhagen, Denmark",
@@ -44,8 +46,9 @@
   {
     "id": 3,
     "country": "Mexico",
+    "flag_emoji": "🇲🇽",
     "elevation": "1,200",
-    "name": "Finca el Paredón",
+    "name": "Paredón Natural",
     "notes": [
       "Red Fruits",
       "Current",
@@ -65,8 +68,9 @@
   {
     "id": 4,
     "country": "Colombia",
+    "flag_emoji": "🇨🇴",
     "elevation": "1,950",
-    "name": "Sakai",
+    "name": "Sakai Geisha",
     "notes": [
       "Rose",
       "Black Cherry",
@@ -86,6 +90,7 @@
   {
     "id": 5,
     "country": "Colombia",
+    "flag_emoji": "🇨🇴",
     "elevation": "1,960",
     "name": "Letty Bermudez",
     "notes": [
@@ -95,7 +100,7 @@
     ],
     "process": "Double Fermentation Thermal Shock",
     "producer": "Diego Samuel Bermudez, Finca el Paraiso",
-    "region": "Cauca,Piendamó",
+    "region": "Piendamó, Cauca",
     "roaster": {
       "location": "Rotterdam, Netherlands",
       "name": "Mahattan Coffee Roasters",
@@ -107,8 +112,9 @@
   {
     "id": 6,
     "country": "Thailand",
+    "flag_emoji": "🇹🇭",
     "elevation": "1,200 - 1,400",
-    "name": "Chiang Rai",
+    "name": "Chiang Rai Natural",
     "notes": [
       "Raspberry",
       "Pineapple",
@@ -116,7 +122,7 @@
       "Violet"
     ],
     "process": "Ma Family Special Natural",
-    "producer": "Ma Family, Ken and Wale",
+    "producer": "Ken and Wale, The Ma Family Estate",
     "region": "Chiang Rai",
     "roaster": {
       "location": "Edmonton, Alberta, Canada",
@@ -129,8 +135,9 @@
   {
     "id": 7,
     "country": "Papua New Guinea",
+    "flag_emoji": "🇵🇬",
     "elevation": "1,750 - 1,900",
-    "name": "Kivirinka",
+    "name": "Kivirinka Arusha",
     "notes": [
       "Toasted Praline",
       "Golden Raisin",
@@ -150,6 +157,7 @@
   {
     "id": 8,
     "country": "Panama",
+    "flag_emoji": "🇵🇦",
     "elevation": "1,600 - 1,750",
     "name": "El Burro Natural ASD",
     "notes": [
@@ -171,6 +179,7 @@
   {
     "id": 9,
     "country": "Ethiopia",
+    "flag_emoji": "🇪🇹",
     "elevation": "2,200",
     "name": "Danche",
     "notes": [
@@ -192,6 +201,7 @@
   {
     "id": 10,
     "country": "Guatemala",
+    "flag_emoji": "🇬🇹",
     "name": "San Antonio de Esquipulas",
     "notes": [
       "Dark Caramel",
@@ -213,15 +223,16 @@
   {
     "id": 11,
     "country": "Myanmar",
+    "flag_emoji": "🇲🇲",
     "elevation": "1,000",
-    "name": "Delicate",
+    "name": "Delicate SL34",
     "notes": [
       "Chrysanthemum",
       "Ripe Red Apples",
       "Persimmon"
     ],
     "process": "Natural",
-    "producer": "U Kway Sein, Ngu Shwe Li Estata",
+    "producer": "U Kway Sein, Ngu Shwe Li Estate",
     "region": "Pyin Oo Lwin, Mandalay",
     "roaster": {
       "location": "London, UK",

@@ -2,10 +2,12 @@
 import { parse } from "path";
 import Layout from "../../components/Layout.astro";
 import coffees from "../../constants/coffees.json";
+import CoffeeBeansSvg from "../../svg/coffeeBeans.svg";
 
 export type Coffee = {
   id: number;
   country: string;
+  flag_emoji: string;
   name: string;
   notes: string[];
   process: string;
@@ -35,7 +37,18 @@ const { id } = Astro.params;
 
 const coffee = coffees[parseInt(id!, 10) - 1];
 
-const { name, producer, region, country, roaster } = coffee;
+const {
+  name,
+  producer,
+  region,
+  country,
+  flag_emoji,
+  roaster,
+  variety,
+  process,
+  harvest_year,
+  elevation,
+} = coffee;
 
 const mainHeader = name || `${producer}, ${region}`;
 
@@ -44,25 +57,95 @@ export const prerender = true;
 
 <Layout title="John the Dev">
   <main
-    class="relative flex h-full w-full max-w-3xl flex-col items-center justify-center gap-4 p-4"
+    class="relative flex h-full w-full max-w-4xl flex-col items-center justify-center gap-4 p-4"
   >
     <a
-      href="/coffee"
-      class="self-center p-2 text-lg transition-all hover:underline sm:self-start"
+      href={`/coffee#${id}`}
+      class="flex flex-row items-center justify-center gap-1 self-center p-2 text-lg transition-all hover:underline sm:self-start"
     >
-      &larr; all coffee
-    </a>
-    <section class="flex w-full flex-col items-start gap-4 bg-slate-700 p-4">
-      <div class="flex w-full flex-wrap items-center justify-between gap-4">
-        <h1 class="text-4xl font-bold">{mainHeader}</h1>
-        <h2 class="text-2xl">{region}, {country}</h2>
+      <span transition:name="coffees-header"> &larr; Coffee</span>
+      <div
+        class="flex h-6 w-6 rounded-full bg-[#d63031]"
+        transition:name="coffees-icon"
+      >
+        <img
+          src={CoffeeBeansSvg.src}
+          class="m-auto h-full w-full place-self-center"
+        />
       </div>
-      <p class="text-lg">Produced by {producer}</p>
+    </a>
+    <section
+      class="flex w-full flex-col items-start justify-start gap-4 rounded-xl bg-slate-700 p-4 text-left"
+      transition:name={`coffee-container-${id}`}
+    >
+      <div class="flex w-full flex-wrap items-center justify-between gap-4">
+        <h1
+          class="text-4xl font-bold"
+          transition:name={`coffee-main-header-${id}`}
+        >
+          {mainHeader}
+        </h1>
+        <h2 class="text-2xl">
+          {region}, <span transition:name={`coffee-origin-${id}`}
+            >{country}{` ${flag_emoji}`}</span
+          >
+        </h2>
+      </div>
       <p class="text-lg">
-        Roasted by <a href={roaster.url}>
-          {roaster}
-        </a> | {roaster.location}
+        <strong>{variety}</strong> varierty
       </p>
+      <p class="text-lg">
+        <strong>{process}</strong> process
+      </p>
+      {
+        elevation ? (
+          <p class="text-lg">
+            Grown at <strong>{elevation}</strong> meters above sea level
+          </p>
+        ) : null
+      }
+      <p class="text-lg">Produced by <strong>{producer}</strong></p>
+      {
+        harvest_year ? (
+          <p class="text-lg">
+            Harvested in <strong>{harvest_year}</strong>
+          </p>
+        ) : null
+      }
+      <p class="text-lg">
+        Roasted by <strong
+          ><a
+            href={roaster.url}
+            class="bg-gradient-to-tr from-teal-600 to-green-400 bg-clip-text text-lg font-extrabold text-transparent transition hover:text-green-400 hover:underline"
+            target="_blank"
+          >
+            {roaster.name}
+          </a></strong
+        > in {roaster.location}
+      </p>
+      <div class="flex flex-row flex-wrap items-center gap-2">
+        <h3 class="text-left text-lg">Tasting Notes:</h3>
+        <ul class="flex flex-row flex-wrap gap-2">
+          {
+            coffee.notes.map((note, index) => {
+              const hue = Math.floor(Math.random() * 360);
+              const gradient = `linear-gradient(to right, hsl(${hue}, 100%, 50%), hsl(${
+                hue + 60
+              }, 100%, 50%))`;
+              return (
+                <li class="rounded-full bg-slate-900 p-2 px-4">
+                  <span
+                    class="bg-gradient-to-tr bg-clip-text text-base font-extrabold text-transparent sm:text-lg"
+                    style={{ backgroundImage: gradient }}
+                  >
+                    {note}
+                  </span>
+                </li>
+              );
+            })
+          }
+        </ul>
+      </div>
     </section>
   </main>
 </Layout>

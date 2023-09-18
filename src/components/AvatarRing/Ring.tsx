@@ -2,9 +2,10 @@ import React, { useEffect, useRef } from 'react';
 import RingLink from './RingLink.tsx';
 import codeSvg from '../../svg/code.svg';
 import codepenSvg from '../../svg/codepen.svg';
-import instagramSvg from '../../svg/instagram.svg';
 import resumeSvg from '../../svg/resume.svg';
 import linkedinSvg from '../../svg/linkedin.svg';
+import coffeeBeansSvg from "../../svg/coffeeBeans.svg";
+
 import './Ring.css';
 import { useWindowSize } from '../../hooks.tsx';
 
@@ -24,11 +25,12 @@ const links = [
     url: 'https://codepen.io/johnmmcg',
   },
   {
-    id: 'instagram',
-    label: 'Instagram',
-    icon: instagramSvg,
+    id: 'coffee',
+    label: 'Coffee',
+    icon: coffeeBeansSvg,
     color: '#d63031',
-    url: 'https://www.instagram.com/light_roast.heavy_lifts/',
+    url: '/coffee',
+    target: '_self',
   },
   {
     id: 'linkedin',
