@@ -22,11 +22,21 @@ module.exports = {
         fadeIn: {
           "0%": { opacity: 0 },
           "100%": { opacity: 1 }
+        },
+        slideUpOut: {
+          "0%": { transform: "translateY(0%)" },
+          "100%": { transform: "translateY(100%)" }
+        },
+        slideUpIn: {
+          "0%": { transform: "translateY(100%)" },
+          "100%": { transform: "translateY(0%)" }
         }
       },
       animation: {
-        wiggle: 'wiggle 2s ease-in-out',
-        fadeIn: "fadeIn 1s ease-in forwards"
+        wiggle: "wiggle 2s ease-in-out",
+        fadeIn: "fadeIn 1s ease-in forwards",
+        slideUpOut: "slideUpOut 200ms ease-in-out both",
+        slideUpIn: "slideUpIn 200ms ease-in-out both"
       }
     },
   },

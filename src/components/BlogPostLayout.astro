@@ -5,8 +5,14 @@ const { title, description, author, date } = frontmatter;
 ---
 
 <Layout title="John the Dev Blog">
+  <a
+    href="/blog"
+    class="sticky top-10 self-start px-2 text-left hover:underline sm:px-6"
+  >
+    &larr; Blog Posts
+  </a>
   <article
-    class="prose prose-stone prose-invert flex w-full flex-col text-left text-slate-50"
+    class="prose prose-stone prose-invert flex w-full flex-col p-2 text-left text-slate-50"
   >
     <header class="flex flex-col gap-2">
       <h1 class="m-0" transition:name="blog-title">{title}</h1>

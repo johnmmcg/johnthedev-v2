@@ -57,7 +57,7 @@ export const prerender = true;
 
 <Layout title="John the Dev">
   <main
-    class="relative flex h-full w-full max-w-4xl flex-col items-center justify-center gap-4 p-4"
+    class="relative flex h-full w-full max-w-5xl flex-col items-center justify-center gap-4 p-4"
   >
     <div
       transition:name="coffees-header"
@@ -86,9 +86,9 @@ export const prerender = true;
         >
           {mainHeader}
         </h1>
-        <h2 class="text-2xl">
+        <h2 class="text-2xl text-slate-300">
           {region}, <span transition:name={`coffee-origin-${id}`}
-            >{country}{` ${flag_emoji}`}</span
+            >{country.toUpperCase()}{` ${flag_emoji}`}</span
           >
         </h2>
       </div>
