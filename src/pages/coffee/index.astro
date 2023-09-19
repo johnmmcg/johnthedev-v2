@@ -21,9 +21,9 @@ import coffees from "../../constants/coffees.json";
     </div>
     <div class="flex max-w-2xl flex-col gap-4">
       <p class="text-lg">
-        In 2014, I took my first sip of a pourover coffee from Ethiopia. My mind
-        was blown as I tasted sweet and clear notes of blueberries and lavender.
-
+        In 2014, I took my first sip of a pourover brewed coffee from Ethiopia.
+        My mind was blown as I tasted sweet and clear notes of blueberries and
+        lavender.
 
         <br />
          I've been hooked ever since!
@@ -39,7 +39,7 @@ import coffees from "../../constants/coffees.json";
         Here's a curated list of my favorite coffees I've ever tasted:
       </p>
     </div>
-    <ul class="flex w-full flex-row flex-wrap items-center justify-center">
+    <ul class="grid w-full grid-cols-1 gap-2 md:grid-cols-2 xl:gap-4">
       {coffees.map((coffee) => <CoffeeListItem coffee={coffee} />)}
     </ul>
   </main>

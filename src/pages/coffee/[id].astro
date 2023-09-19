@@ -12,6 +12,7 @@ export type Coffee = {
   notes: string[];
   process: string;
   producer: string;
+  farm?: string;
   region: string;
   roaster: {
     location: string;
@@ -40,6 +41,7 @@ const coffee = coffees[parseInt(id!, 10) - 1];
 const {
   name,
   producer,
+  farm,
   region,
   country,
   flag_emoji,
@@ -49,8 +51,6 @@ const {
   harvest_year,
   elevation,
 } = coffee;
-
-const mainHeader = name || `${producer}, ${region}`;
 
 export const prerender = true;
 ---
@@ -76,24 +76,28 @@ export const prerender = true;
       </div>
     </div>
     <section
-      class="flex w-full flex-col items-start justify-start gap-4 rounded-xl bg-slate-700 p-4 text-left"
+      class="relative flex w-full flex-col items-start justify-start gap-2 overflow-hidden rounded-xl rounded-tr-none border border-slate-500 bg-slate-700 p-4 text-left md:gap-4"
       transition:name={`coffee-container-${id}`}
     >
+      <h2
+        class="absolute right-0 top-0 w-full border-b border-b-slate-500 border-l-slate-500 bg-slate-900 p-2 text-center text-base text-slate-300 md:w-auto md:rounded-bl-xl md:border-l md:p-3 md:text-xl"
+      >
+        {region},
+        <span>
+          {country}
+        </span>
+        <span transition:name={`coffee-flag-${id}`}>{` ${flag_emoji}`}</span>
+      </h2>
       <div class="flex w-full flex-wrap items-center justify-between gap-4">
         <h1
-          class="text-4xl font-bold"
-          transition:name={`coffee-main-header-${id}`}
+          class="w-full pt-8 text-center text-3xl font-bold md:pt-0 md:text-left md:text-4xl"
+          transition:name={`coffee-name-${id}`}
         >
-          {mainHeader}
+          {name}
         </h1>
-        <h2 class="text-2xl text-slate-300">
-          {region}, <span transition:name={`coffee-origin-${id}`}
-            >{country.toUpperCase()}{` ${flag_emoji}`}</span
-          >
-        </h2>
       </div>
       <p class="text-lg">
-        <strong>{variety}</strong> varierty
+        <strong>{variety}</strong> variety
       </p>
       <p class="text-lg">
         <strong>{process}</strong> process
@@ -105,7 +109,15 @@ export const prerender = true;
           </p>
         ) : null
       }
-      <p class="text-lg">Produced by <strong>{producer}</strong></p>
+      <p class="text-lg">
+        Produced by <strong>{producer}</strong>{
+          farm ? (
+            <Fragment>
+              at <strong>{farm}</strong>
+            </Fragment>
+          ) : null
+        }
+      </p>
       {
         harvest_year ? (
           <p class="text-lg">

@@ -2,36 +2,35 @@
 import type { Coffee } from "../../pages/coffee/[id].astro";
 const { coffee } = Astro.props;
 
-const { id, name, country, flag_emoji } = coffee as Coffee;
+const { id, name, country, flag_emoji, producer, roaster } = coffee as Coffee;
 ---
 
 <li
-  class="flex w-full flex-col items-center p-2 sm:w-1/2"
+  class="flex h-full w-full flex-col overflow-hidden rounded-xl rounded-tr-none border border-slate-500"
   transition:name={`coffee-container-${id}`}
   id={id.toString()}
 >
   <a
     href={`/coffee/${id}`}
-    class="group h-full w-full rounded bg-slate-700 p-2 py-4 transition-all hover:bg-slate-600 sm:p-4"
+    class="group relative h-full w-full bg-slate-700 transition-all hover:bg-slate-600"
   >
-    <div class="relative flex items-center justify-between sm:gap-2">
-      <h2
-        class="text-left text-base font-bold sm:text-lg"
-        transition:name={`coffee-main-header-${id}`}
-      >
-        {name}
-      </h2>
-      <h3
-        class="text-right text-sm sm:text-base"
-        transition:name={`coffee-origin-${id}`}
-      >
-        <span class="text-slate-300">
+    <span
+      class="absolute right-0 top-0 aspect-square rounded-bl-xl border-b border-l border-b-slate-500 border-l-slate-500 bg-slate-900 p-2"
+      transition:name={`coffee-flag-${id}`}
+    >
+      {flag_emoji}
+    </span>
+    <div class="flex h-full flex-col justify-between gap-12 p-4 text-left">
+      <div class="relative flex flex-col">
+        <h3 class="text-6xl font-thin">
           {country.slice(0, 3).toUpperCase()}
-        </span>
-        <span class="text-xl">
-          {` ${flag_emoji}`}
-        </span>
-      </h3>
+        </h3>
+        <h2 class="text-xl" transition:name={`coffee-name-${id}`}>{name}</h2>
+      </div>
+      <div class="flex flex-col">
+        <p class="text-base">{producer}</p>
+        <p class="text-base">{roaster.name}</p>
+      </div>
     </div>
   </a>
 </li>
