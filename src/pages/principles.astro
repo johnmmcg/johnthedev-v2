@@ -5,11 +5,11 @@ import "../input.css";
 ---
 
 <Layout title="John the Dev">
-  <main class="fade-in flex max-w-2xl flex-col gap-8 p-6">
+  <main class="flex max-w-2xl flex-col gap-8 p-6">
     <Greeting />
     <h2
       transition:name="principles"
-      class="inline-bock w-fit self-center bg-white p-4 py-2 text-2xl font-bold text-slate-700 shadow sm:text-3xl"
+      class="inline-bock text-slate- w-fit self-center bg-gradient-to-tr from-teal-600 to-green-400 p-4 py-2 text-2xl font-bold shadow sm:text-3xl"
     >
       My Guiding Principles
     </h2>
@@ -50,7 +50,10 @@ import "../input.css";
           ].map(({ title, description }) => (
             <li>
               <h3 class="flex items-center gap-1 text-2xl tracking-widest sm:text-3xl">
-                <span class="flex aspect-square w-16 items-center justify-center bg-white p-4 text-4xl font-bold tracking-normal text-slate-700">
+                <span
+                  class="flex aspect-square w-16 items-center justify-center bg-white p-4 text-4xl font-bold tracking-normal text-slate-700"
+                  transition:name={`principle-${title[0]}`}
+                >
                   {title[0]}
                 </span>
                 {title.slice(1)}
@@ -66,11 +69,13 @@ import "../input.css";
         <li class="flex flex-col items-center gap-4 border-2 border-white p-6">
           <ul class="flex flex-row items-center justify-center gap-2">
             {
-              ["H", "O", "M", "E"].map((letter) => (
-                <li class="flex aspect-square w-16 items-center justify-center bg-white p-4 text-4xl font-bold tracking-normal text-slate-700">
-                  {letter}
-                </li>
-              ))
+              "HOME"
+                .split("")
+                .map((letter) => (
+                  <li class="flex aspect-square w-16 items-center justify-center bg-white p-4 text-4xl font-bold tracking-normal text-slate-700">
+                    {letter}
+                  </li>
+                ))
             }
           </ul>
           <p
@@ -81,5 +86,6 @@ import "../input.css";
         </li>
       </ul>
     </section>
+    <a href="/"> &#8592; <span class="underline">Back</span></a>
   </main>
 </Layout>

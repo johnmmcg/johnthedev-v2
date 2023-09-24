@@ -1,15 +1,16 @@
 <script>
-  window.addEventListener(
-    'scroll',
-    () => {
-      document.body.style.setProperty(
-        '--scroll',
-        (
-          window.pageYOffset /
-          (document.body.offsetHeight - window.innerHeight)
-        ).toString()
-      );
-    },
-    false
-  );
+  window.addEventListener("scroll", setPercentageScrolled, false);
+  window.addEventListener("resize", setPercentageScrolled, false);
+
+  function setPercentageScrolled() {
+    const percentageScrolled: string = Math.min(
+      Math.round(
+        (window.scrollY / (document.body.offsetHeight - window.innerHeight)) *
+          100,
+      ),
+      100,
+    ).toString();
+
+    document.body.style.setProperty("--scroll", percentageScrolled);
+  }
 </script>

@@ -1,10 +1,10 @@
 ---
-import ScrollPosition from '../scripts/ScrollPosition.astro';
+
 ---
 
 <div
   id="sticky-logo"
-  class="hover:cursor fixed top-0 left-0 z-50 h-[60px] w-[60px] self-start bg-transparent drop-shadow-2xl transition sm:h-[100px] sm:w-[100px]"
+  class="hover:cursor fixed left-0 top-0 z-50 h-[60px] w-[60px] self-start bg-transparent drop-shadow-2xl transition sm:h-[100px] sm:w-[100px]"
 >
   <a
     href="/#top"
@@ -15,16 +15,16 @@ import ScrollPosition from '../scripts/ScrollPosition.astro';
     >
       <div class="cube">
         <div class="side top">
-          <p>JM</p>
+          <p class="text-shadow-sm shadow-black">JM</p>
         </div>
         <div class="side bottom">
-          <p>JM</p>
+          <p class="text-shadow-sm shadow-black">JM</p>
         </div>
         <div class="side front">
-          <p>JM</p>
+          <p class="text-shadow-sm shadow-black">JM</p>
         </div>
         <div class="side back">
-          <p>JM</p>
+          <p class="text-shadow-sm shadow-black">JM</p>
         </div>
       </div>
     </div>
@@ -50,9 +50,9 @@ import ScrollPosition from '../scripts/ScrollPosition.astro';
     height: var(--size);
     transform-style: preserve-3d;
     transform: rotateX(0deg);
-    animation: cube 1s linear;
+    animation: rotate-x 1s linear;
   }
-  @keyframes cube {
+  @keyframes rotate-x {
     to {
       transform: rotateX(-360deg);
     }
@@ -71,25 +71,36 @@ import ScrollPosition from '../scripts/ScrollPosition.astro';
     z-index: 1;
   }
   .top {
-    background-color: #059669;
-    background: radial-gradient(circle at center, #064e3b, #059669);
+    background-color: theme("colors.blue.600");
+    background: radial-gradient(
+      circle at center,
+      theme("colors.blue.950"),
+      theme("colors.blue.600")
+    );
     transform: rotateX(90deg) translateZ(calc(var(--size) * 0.5));
   }
   .bottom {
-    background-color: #059669;
-    background: radial-gradient(circle at center, #064e3b, #059669);
+    background-color: theme("colors.orange.600");
+    background: radial-gradient(
+      circle at center,
+      theme("colors.orange.950"),
+      theme("colors.orange.600")
+    );
     transform: rotateX(90deg) translateZ(calc(var(--size) * -0.5)) scaleY(-1);
   }
   .front {
     background-color: #059669;
-    background: radial-gradient(circle at center, #064e3b, #059669);
+    background: radial-gradient(circle at center, #032a1f, #059669);
 
     transform: translateZ(calc(var(--size) * 0.5));
   }
   .back {
-    background-color: #059669;
-    background: radial-gradient(circle at center, #064e3b, #059669);
-
+    background-color: theme("colors.pink.600");
+    background: radial-gradient(
+      circle at center,
+      theme("colors.pink.950"),
+      theme("colors.pink.600")
+    );
     transform: translateZ(calc(var(--size) * -0.5)) scaleY(-1);
   }
 
@@ -97,10 +108,9 @@ import ScrollPosition from '../scripts/ScrollPosition.astro';
     /* Pause the animation */
     animation-play-state: paused;
     /* Bind the animation to scroll */
-    animation-delay: calc(var(--scroll) * -1s);
+    animation-delay: calc(var(--scroll) * -0.01s);
     /* These last 2 properites clean up overshoot weirdness */
     animation-iteration-count: 1;
     animation-fill-mode: both;
   }
 </style>
-<ScrollPosition />

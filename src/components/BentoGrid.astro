@@ -1,0 +1,62 @@
+---
+// Define an array of background colors
+const colors = [
+  "bg-blue-500",
+  "bg-green-500",
+  "bg-yellow-500",
+  "bg-red-500",
+  "bg-purple-500",
+  "bg-pink-500",
+  "bg-cyan-500",
+  "bg-teal-500",
+];
+
+// Shuffle the array of colors using the Fisher-Yates algorithm
+for (let i = colors.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [colors[i], colors[j]] = [colors[j], colors[i]];
+}
+---
+
+<section class="grid h-full w-full grid-cols-4 gap-2 p-1">
+  <div
+    class="col-span-3 flex h-full min-h-[100px] auto-cols-auto flex-col items-center justify-center overflow-hidden rounded-lg bg-gray-400 shadow-lg md:min-h-[200px]"
+  >
+    <div class={`h-full w-full ${colors[0]}`}></div>
+  </div>
+  <div
+    class="col-auto row-span-2 flex h-full min-h-[100px] flex-col items-center justify-center overflow-hidden rounded-lg bg-gray-400 shadow-lg md:min-h-[200px]"
+  >
+    <div class={`h-full w-full ${colors[1]}`}></div>
+  </div>
+  <div
+    class="col-auto flex h-full min-h-[100px] flex-col items-center justify-center overflow-hidden rounded-lg bg-gray-400 shadow-lg md:min-h-[200px]"
+  >
+    <div class={`h-full w-full ${colors[2]}`}></div>
+  </div>
+  <div
+    class="col-span-2 flex h-full min-h-[100px] flex-col items-center justify-center overflow-hidden rounded-lg bg-gray-400 shadow-lg md:min-h-[200px]"
+  >
+    <div class={`h-full w-full ${colors[3]}`}></div>
+  </div>
+  <div
+    class="col-auto row-span-2 flex h-full min-h-[100px] flex-col items-center justify-center overflow-hidden rounded-lg bg-gray-400 shadow-lg md:min-h-[200px]"
+  >
+    <div class={`h-full w-full ${colors[4]}`}></div>
+  </div>
+  <div
+    class="col-span-3 flex h-full min-h-[100px] flex-col items-center justify-center overflow-hidden rounded-lg bg-gray-400 shadow-lg md:min-h-[200px]"
+  >
+    <div class={`h-full w-full ${colors[5]}`}></div>
+  </div>
+  <div
+    class="col-auto flex h-full min-h-[100px] flex-col items-center justify-center overflow-hidden rounded-lg bg-gray-400 shadow-lg md:min-h-[200px]"
+  >
+    <div class={`h-full w-full ${colors[6]}`}></div>
+  </div>
+  <div
+    class="col-span-2 flex h-full min-h-[100px] flex-col items-center justify-center overflow-hidden rounded-lg bg-gray-400 shadow-lg md:min-h-[200px]"
+  >
+    <div class={`h-full w-full ${colors[7]}`}></div>
+  </div>
+</section>

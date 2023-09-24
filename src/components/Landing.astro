@@ -6,6 +6,7 @@ import ReferencesSection from "./ReferencesSection.astro";
 import TechList from "./TechList.astro";
 import Experience from "./Experience.astro";
 import AvatarRing from "./AvatarRing/index.astro";
+import PrinciplesLink from "./PrinciplesLink.astro";
 ---
 
 <main class="flex flex-col gap-4">
@@ -15,13 +16,5 @@ import AvatarRing from "./AvatarRing/index.astro";
   <TechList />
   <Experience />
   <ReferencesSection />
-  <div class="flex items-center justify-center p-6">
-    <a
-      transition:name="principles"
-      href="/principles"
-      class="inline-bock w-fit self-center bg-white p-4 py-2 text-2xl font-bold text-slate-700 shadow transition hover:underline sm:text-3xl"
-    >
-      My Guiding Principles
-    </a>
-  </div>
+  <PrinciplesLink />
 </main>

@@ -1,3 +1,4 @@
+const plugin = require('tailwindcss/plugin')
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config} */
@@ -10,6 +11,11 @@ module.exports = {
       'sans': ["'Nunito'", ...defaultTheme.fontFamily.sans],
     },
     extend: {
+      textShadow: {
+        sm: '0 1px 2px var(--tw-shadow-color)',
+        DEFAULT: '0 2px 4px var(--tw-shadow-color)',
+        lg: '0 8px 16px var(--tw-shadow-color)',
+      },
       scale: {
         flip: '-1'
       },
@@ -42,6 +48,16 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/typography'),
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          'text-shadow': (value) => ({
+            textShadow: value,
+          }),
+        },
+        { values: theme('textShadow') }
+      )
+    }),
   ],
   variants: ['motion-safe']
 }
