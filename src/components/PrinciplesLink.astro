@@ -1,24 +1,28 @@
-<section class="flex flex-col items-center justify-center gap-4 p-6">
-  <a
-    transition:name="principles"
-    href="/principles"
-    class="bg-gradient-to-tr from-teal-600 to-green-400 p-2 text-xl font-extrabold text-transparent text-white transition hover:underline sm:text-4xl"
+<section class="flex w-full items-center justify-center p-4">
+  <div
+    class="flex max-w-fit flex-col items-center justify-center gap-2 self-center border border-white p-4 px-8"
   >
-    My Guiding Principles &#8594;
-  </a>
-  <ul class="flex">
-    {
-      "HOME".split("").map((letter, index) => (
-        <li class="flex h-full items-center justify-center">
-          <span
-            class="inline-bock w-fit self-center bg-white p-4 py-2 text-2xl font-bold text-slate-700 shadow sm:text-3xl"
-            transition:name={`principle-${letter}`}
-          >
-            {letter}
-          </span>
-          {index !== 3 && <span class="w-4 border-t-2 border-white" />}
-        </li>
-      ))
-    }
-  </ul>
+    <a
+      transition:name="principles"
+      href="/principles"
+      class="p-2 text-xl font-extrabold text-transparent text-white transition hover:underline sm:text-4xl"
+    >
+      My Guiding Principles &#8594;
+    </a>
+    <ul class="flex pb-2">
+      {
+        "HOME".split("").map((letter, index) => (
+          <li class="flex h-full items-center justify-center">
+            <span
+              class="inline-bock w-fit self-center bg-white p-4 py-2 text-2xl font-bold text-slate-700 shadow sm:text-3xl"
+              transition:name={`principle-${letter}`}
+            >
+              {letter}
+            </span>
+            {index !== 3 && <span class="w-4 border-t-2 border-white" />}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </section>
