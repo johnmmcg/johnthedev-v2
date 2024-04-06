@@ -1,26 +1,25 @@
-import React, { useEffect, useRef, useState } from 'react';
-import './Ticker.css';
+import React, { useEffect, useRef, useState } from "react";
+import "./Ticker.css";
 
 const SPECIALTIES = [
-  'building user interfaces 💻',
-  'React ⚛',
-  'TypeScript & JavaScript',
+  "building user interfaces 💻",
+  "React ⚛",
+  "TypeScript & JavaScript",
   "implementing API's",
-  'CSS flexbox & grid',
-  'CSS animations 🎨',
-  'global state management 🌐',
-  'writing documentation 📝',
-  'implementing designs',
-  'code review 🕵🏼‍♂️',
-  'scrum leadership',
-  'cross-team communication 🗣️',
-  'getting the job done 😎',
+  "CSS flexbox & grid",
+  "CSS animations 🎨",
+  "global state management 🌐",
+  "writing documentation 📝",
+  "implementing designs",
+  "code review 🕵🏼‍♂️",
+  "cross-team communication 🗣️",
+  "getting the job done 😎",
 ];
 
 export const SPECIALTIES_REVERSED = SPECIALTIES.reverse();
 
 const SCROLL_TO_BOTTOM_TIMING = {
-  easing: 'cubic-bezier(0.68, -0.6, 0.32, 1)',
+  easing: "cubic-bezier(0.68, -0.6, 0.32, 1)",
   duration: 1750,
   iterations: 1,
 };
@@ -38,11 +37,11 @@ export default function Ticker({ items = SPECIALTIES_REVERSED }) {
 
     el.animate(
       [
-        { top: '0%', filter: 'blur(0px)' },
-        { filter: 'blur(2px)' },
-        { top: bottomPercentage, filter: 'blur(0px)' },
+        { top: "0%", filter: "blur(0px)" },
+        { filter: "blur(2px)" },
+        { top: bottomPercentage, filter: "blur(0px)" },
       ],
-      SCROLL_TO_BOTTOM_TIMING
+      SCROLL_TO_BOTTOM_TIMING,
     );
     el.style.top = bottomPercentage;
   };
@@ -50,12 +49,12 @@ export default function Ticker({ items = SPECIALTIES_REVERSED }) {
   const scrollToNext = (ref: React.MutableRefObject<HTMLUListElement>) => {
     if (!ref.current) return;
     const el = ref.current;
-    if (el.style.top === '0%') {
+    if (el.style.top === "0%") {
       scrollToBottom(containerRef);
     } else {
       const nextTopPosition = `${parseInt(el.style.top) + 100}%`;
       el.animate([{ top: el.style.top }, { top: nextTopPosition }], {
-        easing: 'cubic-bezier(0.68, -0.6, 0.32, 1)',
+        easing: "cubic-bezier(0.68, -0.6, 0.32, 1)",
         duration: 1000,
       });
       el.style.top = nextTopPosition;
@@ -71,7 +70,7 @@ export default function Ticker({ items = SPECIALTIES_REVERSED }) {
   }, [containerRef, bottomPercentage]);
 
   const startNewTickInterval = (
-    ref: React.MutableRefObject<HTMLUListElement>
+    ref: React.MutableRefObject<HTMLUListElement>,
   ) => {
     clearInterval(tickInterval);
     const newInterval = setInterval(() => {
@@ -88,14 +87,8 @@ export default function Ticker({ items = SPECIALTIES_REVERSED }) {
   };
 
   return (
-    <button
-      className="tickerContainer"
-      onClick={handleClick}
-    >
-      <ul
-        className="ticker"
-        ref={containerRef}
-      >
+    <button className="tickerContainer" onClick={handleClick}>
+      <ul className="ticker" ref={containerRef}>
         {items.map((item) => (
           <li
             key={item}
@@ -107,7 +100,7 @@ export default function Ticker({ items = SPECIALTIES_REVERSED }) {
       </ul>
       <div
         id="hover-field"
-        className="absolute top-0 left-0 z-10 h-full w-full"
+        className="absolute left-0 top-0 z-10 h-full w-full"
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       />

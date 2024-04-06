@@ -4,82 +4,82 @@ import {
   ElectronIcon,
   GitIcon,
   GraphQLIcon,
+  HotwireIcon,
   HtmlIcon,
   JavaScriptIcon,
-  JestIcon,
-  JiraIcon,
   NextIcon,
   NodeIcon,
+  RailsIcon,
   ReactIcon,
+  RubyIcon,
   SassIcon,
   TailwindIcon,
   TypeScriptIcon,
-  VSCodeIcon,
-} from '../svg/index';
+} from "../svg/index";
 
 export default [
   {
-    label: 'TypeScript',
+    label: "TypeScript",
     icon: TypeScriptIcon,
   },
   {
-    label: 'JavaScript',
+    label: "JavaScript",
     icon: JavaScriptIcon,
   },
   {
-    label: 'React',
+    label: "React",
     icon: ReactIcon,
   },
   {
-    label: 'Node.js',
+    label: "Node.js",
     icon: NodeIcon,
   },
   {
-    label: 'HTML5',
+    label: "Ruby",
+    icon: RubyIcon,
+  },
+  {
+    label: "Rails",
+    icon: RailsIcon,
+  },
+  {
+    label: "Hotwire",
+    icon: HotwireIcon,
+  },
+  {
+    label: "HTML5",
     icon: HtmlIcon,
   },
   {
-    label: 'CSS3',
+    label: "CSS3",
     icon: CssIcon,
   },
   {
-    label: 'Sass',
-    icon: SassIcon,
-  },
-  {
-    label: 'TailwindCSS',
+    label: "Tailwind CSS",
     icon: TailwindIcon,
   },
   {
-    label: 'GraphQL',
+    label: "Sass",
+    icon: SassIcon,
+  },
+  {
+    label: "GraphQL",
     icon: GraphQLIcon,
   },
   {
-    label: 'Next.js',
+    label: "Next.js",
     icon: NextIcon,
   },
   {
-    label: 'Astro',
+    label: "Astro",
     icon: AstroIcon,
   },
   {
-    label: 'Electron',
+    label: "Electron",
     icon: ElectronIcon,
   },
   {
-    label: 'Jest',
-    icon: JestIcon,
-  },
-  {
-    label: 'VSCode',
-    icon: VSCodeIcon,
-  },
-  {
-    label: 'Git',
+    label: "Git",
     icon: GitIcon,
-  },
-  {
-    label: 'Jira',
-    icon: JiraIcon,
   },
 ];
