@@ -47,11 +47,11 @@ export default [
     icon: HotwireIcon,
   },
   {
-    label: "HTML5",
+    label: "HTML",
     icon: HtmlIcon,
   },
   {
-    label: "CSS3",
+    label: "CSS",
     icon: CssIcon,
   },
   {
