@@ -4,32 +4,32 @@ const { frontmatter } = Astro.props;
 const { title, description, author, date } = frontmatter;
 ---
 
-<Layout title="John the Dev Blog">
+<Layout title="John the Dev - Music Picks">
   <a
-    href="/blog"
+    href="/music"
     class="sticky top-10 self-start px-2 text-left hover:underline sm:px-6"
   >
-    &larr; Blog Posts
+    &larr; Music Posts
   </a>
   <article
     class="prose prose-stone prose-invert flex w-full flex-col bg-slate-800 p-4 text-left text-slate-300"
   >
     <header class="flex flex-col gap-2">
-      <h1 class="m-0 text-pretty" transition:name="blog-title">{title}</h1>
-      <h2 class="m-0 text-slate-300 text-pretty" transition:name="blog-description">
+      <h1 class="m-0 text-pretty" transition:name="music-title">{title}</h1>
+      <h2 class="m-0 text-slate-300 text-pretty" transition:name="music-description">
         {description}
       </h2>
       <div class="flex flex-row justify-between">
         <p class="m-0 text-slate-300">{author}</p>
-        <p class="m-0 text-slate-300" transition:name="blog-date">{date}</p>
+        <p class="m-0 text-slate-300" transition:name="music-date">{date}</p>
       </div>
       <hr class="my-1" />
     </header>
     <!-- Markdown content is injected in slot -->
     <slot />
   </article>
-  <div class="flex gap-1 self-center p-4" transition:name="blog-posts-header">
+  <div class="flex gap-1 self-center p-4" transition:name="music-posts-header">
     <p>&larr;</p>
-    <a href={`/blog`} class="hover:underline"> Blog Posts 👨🏼‍💻</a>
+    <a href={`/music`} class="hover:underline">Music Picks 🎶</a>
   </div>
 </Layout>
