@@ -3,43 +3,37 @@ import { getCollection } from "astro:content";
 import Layout from "@components/Layout.astro";
 import Greeting from "@components/Greeting.astro";
 
-const blogEntries = await getCollection("blog");
+const musicEntries = await getCollection("music");
 
 export const prerender = true;
 ---
 
-<Layout title="John the Dev Blog">
+<Layout title="John the Dev - Music Picks">
   <main class="flex w-full max-w-4xl flex-col gap-4">
     <Greeting />
     <br />
-    <h1 class="text-4xl" transition:name="blog-posts-header">Blog Posts 👨🏼‍💻</h1>
+    <h3 class="text-4xl" transition:name="music-posts-header">Music Picks 🎶</h3>
     <ul class="flex w-full flex-col gap-2 p-4">
       {
-        blogEntries.map(({ data, slug }) => {
-          const { title, description, date } = data;
+        musicEntries.map(({ data, slug }) => {
+          const { title, date } = data;
           return (
             <li class="flex h-auto w-full">
               <a
-                href={`/blog/${slug}`}
+                href={`/music/${slug}`}
                 class="flex h-full w-full flex-col gap-2 rounded bg-slate-700 p-4 text-left text-2xl transition-colors hover:bg-slate-600"
               >
-                <div class="flex w-full flex-row justify-between">
-                  <h2 class="text-2xl font-bold" transition:name="blog-title">
+                <div class="flex w-full flex-row justify-between items-center">
+                  <h2 class="text-2xl font-bold" transition:name="music-title">
                     {title}
                   </h2>
                   <p
                     class="text-base text-slate-300"
-                    transition:name="blog-date"
+                    transition:name="music-date"
                   >
                     {date}
                   </p>
                 </div>
-                <p
-                  class="text-lg text-slate-300"
-                  transition:name="blog-description"
-                >
-                  {description}
-                </p>
               </a>
             </li>
           );

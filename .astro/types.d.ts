@@ -182,6 +182,15 @@ declare module 'astro:content' {
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 };
+"music": {
+"2024.md": {
+	id: "2024.md";
+  slug: "2024";
+  body: string;
+  collection: "music";
+  data: any
+} & { render(): Render[".md"] };
+};
 
 	};
 

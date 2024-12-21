@@ -1,0 +1,21 @@
+---
+import { getCollection } from "astro:content";
+import MusicPostLayout from "@components/MusicPostLayout.astro";
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("music");
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+export const prerender = true;
+---
+
+<MusicPostLayout frontmatter={entry.data}>
+  <Content />
+</MusicPostLayout>
